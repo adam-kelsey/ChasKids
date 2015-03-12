@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap.min
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
 //= require angular/angular
 //= require angular-route.min
 //= require angular-animate/angular-animate
