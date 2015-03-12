@@ -16,4 +16,3 @@
 //= require angular-route.min
 //= require underscore.min
 //= require app
-//= require_tree .
