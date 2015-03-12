@@ -12,7 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= angular.min
+//= require angular/angular
 //= require angular-route.min
+//= require angular-animate/angular-animate
 //= require underscore.min
 //= require app
+//= require admin/adminModule
+//= require admin/adminController
+//= require user/userModule
+//= require user/userController
+//= require service
