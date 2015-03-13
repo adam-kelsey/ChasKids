@@ -1,0 +1,156 @@
+<div class="container container-formVenue">
+
+<div class="routeLinks">
+  <a href="#/adminlist"><span class="fa-lg">
+    <i class="fa fa-arrow-left"></i>
+  </span>Back to List</a>
+</div>
+
+
+  <h3>Add a new venue</h3>
+
+  <form class="form-horizontal" ng-submit="adminCtrl.addVenue(newVenue)">
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">facebook_id</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="facebook_id" ng-model="newVenue.facebook_id" placeholder="Facebook Id">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Venue Category</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="category" ng-model="newVenue.category" placeholder="Venue Category">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Image</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="image" ng-model="newVenue.image" placeholder="Image">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" ng-model="newVenue.name" placeholder="Image">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Address 1</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="address_one" ng-model="newVenue.address_one" placeholder="Street Address 1">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Address 2</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="address_two" ng-model="newVenue.address_2" placeholder="Street Address 2">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">City</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="city" ng-model="newVenue.city" placeholder="City">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">State</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="state" ng-model="newVenue.state" placeholder="State">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Zip</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="zip" ng-model="newVenue.zip" placeholder="ZIP">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="email" ng-model="newVenue.email" placeholder="e-mail address">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Phone</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="phone_number" ng-model="newVenue.phone_number" placeholder="Phone">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Facebook</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="facebook" ng-model="newVenue.facebook" placeholder="Facebook">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Twitter</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="twitter" ng-model="newVenue.twitter" placeholder="Twitter">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Website</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="website_url" ng-model="newVenue.website_url" placeholder="Website Url">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Description Short</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="short_description" ng-model="newVenue.short_description" placeholder="Venue profile - short"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Description Long</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="long_description" ng-model="newVenue.long_description" placeholder="Venue profile - long"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Venue?</label>
+      <div class="radio">
+        <label class="radio-inline">
+          <input
+          type="radio"
+          ng-model="newVenue.birthday_party_venue"
+          value="Yes"
+          > Yes
+        </label>
+        <label class="radio-inline">
+          <input
+          type="radio"
+          ng-model="newVenue.birthday_party_venue"
+          value="No"
+          >No
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Description</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" id="birthday_party_description" ng-model="newVenue.birthday_party_description" placeholder="Birthday Party Description"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Website</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="birthday_party_website_url" ng-model="newVenue.birthday_party_website_url" placeholder="Birthday Party Website Url">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Phone</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="birthday_party_phone" ng-model="newVenue.birthday_party_phone" placeholder="Birthday Party Phone">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit">Add Venue</button>
+        <!-- or   <a href="" class="btn-login" ng-click="adminCtrl.addNewVenue(newVenue)">Add venue</a> -->
+      </div>
+    </div>
+
+  </form>
+
+</div>

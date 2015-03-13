@@ -3,20 +3,20 @@
 
   angular.module('admin', [
   'ngRoute',
-  'ngAnimate'
+  // 'ngAnimate'
   ])
   .config(function ($routeProvider) {
     $routeProvider
     .when('/adminlist', {
-      templateUrl: '../assets/javascript/admin/adminListView.html',
+      templateUrl: 'assets/admin/adminListView.html',
       controller: 'AdminController as adminCtrl'
     })
     .when('/addvenue', {
-      templateUrl: '../assets/javascript/admin/addNewVenue.html',
+      templateUrl: 'assets/admin/addNewVenue.html',
       controller: 'AdminController as adminCtrl'
     })
     .when('/edit/:venueId', {
-      templateUrl: '../assets/javascript/admin/editVenue.html',
+      templateUrl: 'assets/admin/editVenue.html',
       controller: 'AdminController as adminCtrl'
     })
 
