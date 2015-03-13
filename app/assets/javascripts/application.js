@@ -16,7 +16,6 @@
 //= require angular/angular
 //= require angular-route.min
 //= require angular-animate/angular-animate
-//= require angular-devise/devise
 //= require underscore.min
 //= require app
 //= require admin/adminModule
