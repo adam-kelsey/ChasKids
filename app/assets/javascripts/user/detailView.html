@@ -7,9 +7,25 @@
 
     </div>
     <div class="col-md-4">
-      <a href="" class="btn btn-default">Website</a>
-      <a href="" class="btn btn-default">Add to Favorites</a>
-
+      <div class="groupButtons">
+        <a href="" class="btn btn-default">Website</a>
+        <a href="" class="btn btn-default">Add to Favorites</a>
+      </div>
+      <div class="Address">
+        <h4> Address:</h4>
+        <p>{{userCtrl.singleVenue.address_one}}</p>
+        <p>{{userCtrl.singleVenue.address_two}}</p>
+        <p>{{userCtrl.singleVenue.city}}, {{userCtrl.singleVenue.state}}</p>
+        <p>{{userCtrl.singleVenue.zip}}</p>
+      </div>
+      <div class="Phone">
+        <h4>Phone:</h4>
+        <p>{{userCtrl.singleVenue.phone}}</p>
+      </div>
+      <div class="socialMedia">
+        <h4>Social Media:</h4>
+        <span><a href="{{userCtrl.singleVenue.facebook}}"></a></span><span><a href="{{userCtrl.singleVenue.twitter}}"></a></span>
+      </div>
     </div>
 
 
@@ -17,12 +33,23 @@
 
   <div class="row">
     <div class="col-md-12">
+      <p>
+        {{userCtrl.singleVenue.long_description}}
+      </p>
+      <p>
+        Birthday party venue: {{userCtrl.singleVenue.birthday_party_venue}}
+      </p>
 
     </div>
 
   </div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <p>Comments section - need to add</p>
 
+    </div>
 
+  </div>
 
 </div>

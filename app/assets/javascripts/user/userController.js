@@ -42,11 +42,11 @@
       VenueService.deleteFavoriteVenue(item);
     };
 
-//add comments in detail view - add later
-    // userCtrl.addComment = function (item, comment) {
-    //   VenueService.addComment(item, comment);
-    //   $scope.review = {};
-    // };
+//add comments in detail view
+    userCtrl.addComment = function (item, comment) {
+      VenueService.addComment(item, comment);
+      $scope.review = {};
+    };
 
   })
 })();

@@ -6,19 +6,34 @@
 
     <li class="row">
       <div class="col-md-4">
-        <img src="http://placehold.it/200x200" alt="">
-
+        <img src="http://placehold.it/200x200"/>
       </div>
       <div class="col-md-6">
         <h3>Name</h3>
         <p>Short description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta accusamus voluptatum obcaecati magnam, aut voluptates.</p>
-
       </div>
       <div class="col-md-2">
         <a href="#/details/:venueId" class="btn btn-default">More Details</a>
         <a href="" class="btn btn-default">Website</a>
       </div>
     </li>
+<!--
+    <li class="row" ng-repeat="venue in userCtrl.venues | filter: {category:userCtrl.venues.category}">
+      <div class="col-md-4">
+        <img data-ng-src={{venue.image}} alt="">
+      </div>
+      <div class="col-md-6">
+
+        <p>{{venue.name}}</p>
+        <p>{{venue.short_description}}</p>
+
+      </div>
+      <div class="col-md-2">
+        <a href="#/details/:venueId" class="btn btn-default">More Details</a>
+        <a href="" class="btn btn-default">Website</a>
+      </div>
+    </li> -->
+
   </ul>
 
 </div>

@@ -7,7 +7,7 @@
   ])
   .config(function($routeProvider){
     $routeProvider
-    .when('/list', {
+    .when('/list/', {
       templateUrl: 'assets/user/catListView.html',
       controller: 'UserController as userCtrl'
     })
