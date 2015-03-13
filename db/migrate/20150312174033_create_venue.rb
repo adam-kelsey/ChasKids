@@ -20,6 +20,8 @@ class CreateVenue < ActiveRecord::Migration
       t.text :birthday_party_description
       t.string :birthday_party_website_url
       t.integer :birthday_party_phone
+
+      t.timestamps null: false
     end
   end
 end
