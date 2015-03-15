@@ -1,0 +1,15 @@
+%h1 Test
+- if admin_signed_in?
+  =link_to destroy_admin_session_path method: :destroy do
+    Sign out
+  =link_to new_venue_path do
+    New Venue
+  =link_to venues_path do
+    Show Venues
+-else
+  =link_to new_admin_registration_path do
+    Sign up
+  =link_to new_admin_session_path do
+    Sign in
+
+%div{"ng-view" => "index.html"}
