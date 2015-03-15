@@ -1,0 +1,67 @@
+= form_for @venue do |f|
+  - if @venue.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@venue.errors.count, "error")} prohibited this venue from being saved:"
+      %ul
+        - @venue.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :facebook_id
+    = f.number_field :facebook_id
+  .field
+    = f.label :category
+    = f.text_field :category
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :image
+    = f.text_field :image
+  .field
+    = f.label :website_url
+    = f.text_field :website_url
+  .field
+    = f.label :address_one
+    = f.text_field :address_one
+  .field
+    = f.label :address_two
+    = f.text_field :address_two
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :state
+    = f.text_field :state
+  .field
+    = f.label :zip
+    = f.number_field :zip
+  .field
+    = f.label :phone_number
+    = f.number_field :phone_number
+  .field
+    = f.label :short_description
+    = f.text_area :short_description
+  .field
+    = f.label :long_description
+    = f.text_area :long_description
+  .field
+    = f.label :facebook
+    = f.text_area :facebook
+  .field
+    = f.label :twitter
+    = f.text_area :twitter
+  .field
+    = f.label :birthday_party_venue
+    = f.check_box :birthday_party_venue
+  .field
+    = f.label :birthday_party_description
+    = f.text_area :birthday_party_description
+  .field
+    = f.label :birthday_party_website_url
+    = f.text_field :birthday_party_website_url
+  .field
+    = f.label :birthday_party_phone
+    = f.number_field :birthday_party_phone
+  .actions
+    = f.submit 'Save'
