@@ -1,0 +1,63 @@
+%p#notice= notice
+
+%p
+  %b Facebook:
+  = @venue.facebook_id
+%p
+  %b Category:
+  = @venue.category
+%p
+  %b Name:
+  = @venue.name
+%p
+  %b Image:
+  = @venue.image
+%p
+  %b Website url:
+  = @venue.website_url
+%p
+  %b Address one:
+  = @venue.address_one
+%p
+  %b Address two:
+  = @venue.address_two
+%p
+  %b City:
+  = @venue.city
+%p
+  %b State:
+  = @venue.state
+%p
+  %b Zip:
+  = @venue.zip
+%p
+  %b Phone number:
+  = @venue.phone_number
+%p
+  %b Short description:
+  = @venue.short_description
+%p
+  %b Long description:
+  = @venue.long_description
+%p
+  %b Facebook:
+  = @venue.facebook
+%p
+  %b Twitter:
+  = @venue.twitter
+%p
+  %b Birthday party venue:
+  = @venue.birthday_party_venue
+%p
+  %b Birthday party description:
+  = @venue.birthday_party_description
+%p
+  %b Birthday party website url:
+  = @venue.birthday_party_website_url
+%p
+  %b Birthday party phone:
+  = @venue.birthday_party_phone
+
+= link_to 'Edit', edit_venue_path(@venue)
+\|
+= link_to 'Back', venues_path

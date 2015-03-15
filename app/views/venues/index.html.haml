@@ -1,0 +1,57 @@
+%h1 Listing venues
+
+%table
+  %thead
+    %tr
+      %th Facebook
+      %th Category
+      %th Name
+      %th Image
+      %th Website url
+      %th Address one
+      %th Address two
+      %th City
+      %th State
+      %th Zip
+      %th Phone number
+      %th Short description
+      %th Long description
+      %th Facebook
+      %th Twitter
+      %th Birthday party venue
+      %th Birthday party description
+      %th Birthday party website url
+      %th Birthday party phone
+      %th
+      %th
+      %th
+
+  %tbody
+    - @venues.each do |venue|
+      %tr
+        %td= venue.facebook_id
+        %td= venue.category
+        %td= venue.name
+        %td= venue.image
+        %td= venue.website_url
+        %td= venue.address_one
+        %td= venue.address_two
+        %td= venue.city
+        %td= venue.state
+        %td= venue.zip
+        %td= venue.phone_number
+        %td= venue.short_description
+        %td= venue.long_description
+        %td= venue.facebook
+        %td= venue.twitter
+        %td= venue.birthday_party_venue
+        %td= venue.birthday_party_description
+        %td= venue.birthday_party_website_url
+        %td= venue.birthday_party_phone
+        %td= link_to 'Show', venue_path(venue)
+        %td= link_to 'Edit', edit_venue_path(venue)
+        %td= link_to 'Destroy', venue_path(venue), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Venue', new_venue_path
