@@ -3,7 +3,9 @@
   angular.module('ChasKids')
   .factory('VenueService', function($http, $location) {  //check: $routeParams, (_) for lodash/underscore
 
-    var url = 'http://tiy-fee-rest.herokuapp.com/collections/ChasKids';  //???
+    // var url = 'http://localhost:3000';
+    // var url = 'http://tiy-fee-rest.herokuapp.com/collections/ChasKids';
+    //do we need to set this up in Rails???
 
     var getVenues = function () {
       return $http.get(url);
@@ -34,17 +36,17 @@
     };
 
 // Favorites
-  var favorite = [];
+  var favorites = [];
 
   var addFavoriteVenue = function (newFavoriteVenue) {
-    favorite.push(newFavoriteVenue);
+    favorites.push(newFavoriteVenue);
   };
   var getFavoriteVenues = function () {
-    return favorite;
+    return favorites;
   };
   var deleteFavoriteVenue = function (item) {
-    var index = favorite.indexOf(item);
-    favorite.splice(index,1);
+    var index = favorites.indexOf(item);
+    favorites.splice(index,1);
   };
 //
 // save for later

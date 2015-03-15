@@ -19,12 +19,16 @@
       templateUrl: 'assets/user/favoritesView.html',
       controller: 'UserController as userCtrl'
     })
-    .when('/details/:venueId', {
+    .when('/details', {      //change to /:venueId when set up correctly
       templateUrl: 'assets/user/detailView.html',
       controller: 'UserController as userCtrl'
     })
     .when('/suggestions', {
       templateUrl: 'assets/user/suggestionsView.html',
+      controller: 'UserController as userCtrl'
+    })
+    .when('/other', {
+      templateUrl: 'assets/user/otherResources.html',
       controller: 'UserController as userCtrl'
     })
   });

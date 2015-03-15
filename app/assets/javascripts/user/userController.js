@@ -25,12 +25,8 @@
 
     userCtrl.currentIndex = $routeParams.venueId;
 
-    // userCtrl.goToVenues = function() {
-    //   $location.path('/list');
-    //   $('head').find('style').remove();
-    // }
 
-
+// favorites
 
     userCtrl.favorites = VenueService.getFavoriteVenues();
     // favorites.total = 0;
@@ -45,7 +41,7 @@
 //add comments in detail view
     userCtrl.addComment = function (item, comment) {
       VenueService.addComment(item, comment);
-      $scope.review = {};
+      $scope.comment = {};
     };
 
   })

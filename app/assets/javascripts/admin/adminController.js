@@ -19,12 +19,12 @@
       VenueService.addVenue(newVenue);
     };
 
-    //delete company
+    //delete venue
     adminCtrl.deleteVenue = function (id) {
       VenueService.deleteVenue(id);
     };
 
-    //edit company
+    //edit venue
     adminCtrl.editVenue = function (venue) {
       VenueService.editVenue (venue, venue._id); //or $routeParams.venueId?
     };
