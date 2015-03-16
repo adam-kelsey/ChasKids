@@ -23,3 +23,4 @@
 //= require user/userModule
 //= require user/userController
 //= require service
+//= require_tree .
