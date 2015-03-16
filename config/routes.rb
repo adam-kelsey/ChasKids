@@ -2,7 +2,16 @@ Rails.application.routes.draw do
   devise_for :admins
 
   resources :admins
-  resources :venues
+  resources :venues do
+    get :parks_and_playgrounds
+    get :beaches_and_waterparks
+    get :outdoor_sports_and_recreation
+    get :animals
+    get :indoor_fun
+    get :museums_and_historic_sites
+    get :birthday_party_venues
+    get :other_kids_resources
+  end
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

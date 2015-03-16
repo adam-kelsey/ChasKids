@@ -1,28 +1,20 @@
 class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
-  # GET /venues
-  # GET /venues.json
   def index
     @venues = Venue.all
   end
 
-  # GET /venues/1
-  # GET /venues/1.json
   def show
   end
 
-  # GET /venues/new
   def new
     @venue = Venue.new
   end
 
-  # GET /venues/1/edit
   def edit
   end
 
-  # POST /venues
-  # POST /venues.json
   def create
     @venue = Venue.new(venue_params)
 
@@ -37,8 +29,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /venues/1
-  # PATCH/PUT /venues/1.json
   def update
     respond_to do |format|
       if @venue.update(venue_params)
@@ -51,8 +41,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # DELETE /venues/1
-  # DELETE /venues/1.json
   def destroy
     @venue.destroy
     respond_to do |format|
@@ -61,13 +49,107 @@ class VenuesController < ApplicationController
     end
   end
 
+  def parks_and_playgrounds
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'parks_and_playgrounds'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
+  def beaches_and_waterparks
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'beaches_and_waterparks'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
+  def outdoor_sports_and_recreation
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'outdoor_sports_and_recreation'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
+  def animals
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'animals'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
+  def indoor_fun
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'indoor_fun'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
+  def museums_and_historic_sites
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'museums_and_historic_sites'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
+  def birthday_party_venues
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'birthday_party_venues'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
+  def other_kids_resources
+    @venues = []
+    Venue.all.each do |venue|
+      if venue.category == 'other_kids_resources'
+        @venues.push(venue)
+      end
+      respond_to do |format|
+        format.json { render json: @venues.to_json }
+      end
+    end
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_venue
       @venue = Venue.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
       params.require(:venue).permit(:facebook_id, :category, :name, :image, :website_url, :address_one, :address_two, :city, :state, :zip, :phone_number, :short_description, :long_description, :facebook, :twitter, :birthday_party_venue, :birthday_party_description, :birthday_party_website_url, :birthday_party_phone)
     end

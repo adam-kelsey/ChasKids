@@ -11,7 +11,7 @@
     = f.number_field :facebook_id
   .field
     = f.label :category
-    = f.text_field :category
+    = f.select :category, Venue::CATEGORIES, {prompt: "Select a Cateogry"}
   .field
     = f.label :name
     = f.text_field :name
