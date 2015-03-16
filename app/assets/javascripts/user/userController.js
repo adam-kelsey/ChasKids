@@ -15,38 +15,46 @@
     //   zoom: 12
     // };
 
+    // userCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);  (for local)
+
     VenueService.getSingleVenue($routeParams.venueId).success(function (data) {
       userCtrl.singleVenue = data;
+      console.log(data);
     });
 
+    // userCtrl.venues = VenueService.getVenues();  (for local)
     VenueService.getVenues().success(function (data) {
       userCtrl.venues = data;
     });
 
     userCtrl.currentIndex = $routeParams.venueId;
 
-    // userCtrl.goToVenues = function() {
-    //   $location.path('/list');
-    //   $('head').find('style').remove();
-    // }
-
-
-
-    userCtrl.favorites = VenueService.getFavoriteVenues();
-    // favorites.total = 0;
-
-    userCtrl.addFavoriteVenue = function (item) {
-      VenueService.addFavoriteVenue(item);
+    // add comments in detail view
+    userCtrl.addComment = function (venue, comment) {
+      console.log('inside add comment in ctrl');
+      VenueService.addComment(venue, comment);
+      $scope.comment = {};
     };
-    userCtrl.deleteFavoriteVenue = function (item) {
-      VenueService.deleteFavoriteVenue(item);
-    };
-
-//add comments in detail view - add later
-    // userCtrl.addComment = function (item, comment) {
-    //   VenueService.addComment(item, comment);
-    //   $scope.review = {};
-    // };
-
   })
+
+
+  // favorites
+
+  .controller('FavoritesController', function(FaveService) {
+
+    var faveCtrl = this;
+
+    faveCtrl.favorites = FaveService.getFavoriteVenues();
+
+
+    faveCtrl.addFavoriteVenue = function (venue) {
+      FaveService.addFavoriteVenue(venue);
+      console.log('fave venue added');
+    };
+    faveCtrl.deleteFavoriteVenue = function (venue) {
+      FaveService.deleteFavoriteVenue(venue);
+    };
+
+  });
+
 })();
