@@ -1,2 +1,9 @@
 .jumbotron.hero-spacer{
 }
+
+.thumbnail {
+  border: none;
+  > img {
+  border-radius: 100%;
+  }
+}

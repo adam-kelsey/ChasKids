@@ -5,9 +5,15 @@
 
     var adminCtrl = this;
 
+
+    // adminCtrl.venues = VenueService.getVenues();   (for local)
+
     VenueService.getVenues().success(function(data){
       adminCtrl.venues = data;
     });
+
+
+    // adminCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);   (for local)
 
     VenueService.getSingleVenue($routeParams.venueId).success(function(data){
       adminCtrl.singleVenue = data;

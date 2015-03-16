@@ -15,12 +15,14 @@
     //   zoom: 12
     // };
 
+    // userCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);  (for local)
+
     VenueService.getSingleVenue($routeParams.venueId).success(function (data) {
       userCtrl.singleVenue = data;
       console.log(data);
-
     });
 
+    // userCtrl.venues = VenueService.getVenues();  (for local)
     VenueService.getVenues().success(function (data) {
       userCtrl.venues = data;
     });
@@ -29,7 +31,7 @@
 
     // add comments in detail view
     userCtrl.addComment = function (venue, comment) {
-      console.log('inside ad comment in ctrl');
+      console.log('inside add comment in ctrl');
       VenueService.addComment(venue, comment);
       $scope.comment = {};
     };
