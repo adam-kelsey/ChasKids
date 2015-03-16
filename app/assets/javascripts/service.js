@@ -4,8 +4,13 @@
   .factory('VenueService', function($http, $location) {  //check: $routeParams, (_) for lodash/underscore
 
     // var url = 'http://localhost:3000';
-    // var url = 'http://tiy-fee-rest.herokuapp.com/collections/ChasKids';
-    //do we need to set this up in Rails???
+    var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspot';
+
+
+    // var url = '/api/venues';
+
+
+    // var venues = [];
 
     var getVenues = function () {
       return $http.get(url);
@@ -17,6 +22,7 @@
 
     var addVenue = function (venue) {
       // venue.comments = [];
+      venue.comments = [{author: 'calvin', content: 'this is a comment'}];
       $http.post(url, venue).success(function(){
         $location.path('/adminlist');
       });
@@ -35,25 +41,16 @@
       });
     };
 
-// Favorites
-  var favorites = [];
+  //comments
+    var addComment = function (venue, comment) {
+      console.log(venue);
+      venue.comments.push(comment);
 
-  var addFavoriteVenue = function (newFavoriteVenue) {
-    favorites.push(newFavoriteVenue);
-  };
-  var getFavoriteVenues = function () {
-    return favorites;
-  };
-  var deleteFavoriteVenue = function (item) {
-    var index = favorites.indexOf(item);
-    favorites.splice(index,1);
-  };
-//
-// save for later
-  // var addComment = function (venue, comment) {
-  //   venue.comments.push(comment);
-  //   $http.put(url + '/' + venue._id, venue);
-  // };
+      $http.put(url + '/' + venue._id, venue);
+    };
+
+
+
 
 
 
@@ -84,13 +81,37 @@
       addVenue: addVenue,
       deleteVenue: deleteVenue,
       editVenue: editVenue,
-      // add Comment: addComment,
+      add Comment: addComment,
+      // getCoords: getCoords
+    };
+  })
+  .factory('FaveService', function ($http, _) {  //$rootScope?
 
+    // var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspotfaves';  //do I need a separate url
+    var favorites = [];
+
+    var addFavoriteVenue = function (venue) {
+      // $http.post(url, venue);
+      //$rootScope.$broadcast('venue:created');
+      favorites.push(venue);
+    };
+    var getFavoriteVenues = function () {
+      //return $http.get(url);
+      return favorites;
+    };
+    var deleteFavoriteVenue = function (venue) {  //for $http: id
+      // $http.delete(url + '/' + id);
+      //$rootScope.$broadcast('venue:deleted');
+      var index = favorites.indexOf(venue);
+      favorites.splice(index,1);
+    };
+
+
+    return {
       getFavoriteVenues: getFavoriteVenues,
       addFavoriteVenue: addFavoriteVenue,
       deleteFavoriteVenue: deleteFavoriteVenue,
 
-      // getCoords: getCoords
     };
 
   });

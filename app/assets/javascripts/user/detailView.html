@@ -1,64 +1,83 @@
 <div class="container container-detail">
-  <div class="routeLinks">
-    <a href="#/"><span class="fa-lg">
-      <i class="fa fa-home"></i>
-    </span>Home</a>
-    <a href="#/list"><span class="fa-lg">
-      <i class="fa fa-arrow-left"></i>
-    </span>Back to List</a>
-  </div>
+  <!--   <div class="routeLinks">
+  <a href="#/"><span class="fa-lg">
+  <i class="fa fa-home"></i>
+</span>Home</a> -->
+<!--     <a href="#/list"><span class="fa-lg">
+<i class="fa fa-arrow-left"></i>
+</span>Back to List</a>
+</div> -->
 
-  <div class="row">
-    <div class="col-md-8">
-      <h2>{{userCtrl.singleVenue.name}}</h2>
-      <img src="http://placehold.it/400x400" alt="">
-  <!--     <img data-ng-src={{userCtrl.singleVenue.image}}/> -->
-
-    </div>
-    <div class="col-md-4">
-      <div class="groupButtons">
-        <a href="" class="btn btn-default">Website</a>
-        <a href="" class="btn btn-default">Add to Favorites</a>
-      </div>
-      <div class="Address">
-        <h4> Address:</h4>
-        <p>{{userCtrl.singleVenue.address_one}}</p>
-        <p>{{userCtrl.singleVenue.address_two}}</p>
-        <p>{{userCtrl.singleVenue.city}}, {{userCtrl.singleVenue.state}}</p>
-        <p>{{userCtrl.singleVenue.zip}}</p>
-      </div>
-      <div class="Phone">
-        <h4>Phone:</h4>
-        <p>{{userCtrl.singleVenue.phone}}</p>
-      </div>
-      <div class="socialMedia">
-        <h4>Social Media:</h4>
-        <span><a href="{{userCtrl.singleVenue.facebook}}"></a></span><span><a href="{{userCtrl.singleVenue.twitter}}"></a></span>
-      </div>
-    </div>
-
+<div class="row">
+  <div class="col-md-8">
+    <h2>{{userCtrl.singleVenue.name}}</h2>
+    <!--       <img src="http://placehold.it/400x400" alt=""> -->
+    <img data-ng-src={{userCtrl.singleVenue.image}}/>
 
   </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <p>
-        {{userCtrl.singleVenue.long_description}}
-      </p>
-      <p>
-        Birthday party venue: {{userCtrl.singleVenue.birthday_party_venue}}
-      </p>
-
+  <div class="col-md-4">
+    <div class="groupButtons">
+      <a class = "website" target="_blank" href="{{userCtrl.singleVenue.website_url}}" class="btn btn-default">Website</a>
+      <div ng-controller="FavoritesController as faveCtrl">
+        <a ng-click="faveCtrl.addFavoriteVenue(userCtrl.singleVenue)" href="" class="btn btn-default">Add to Favorites</a>
+      </div>
     </div>
+    <div class="Address">
+      <h4> Address:</h4>
+      <p>{{userCtrl.singleVenue.address_one}}</p>
+      <p>{{userCtrl.singleVenue.address_two}}</p>
+      <p>{{userCtrl.singleVenue.city}}, SC</p>
+      <p>{{userCtrl.singleVenue.zip}}</p>
+    </div>
+    <div class="Phone">
+      <h4>Phone:</h4>
+      <p>{{userCtrl.singleVenue.phone_number}}</p>
+    </div>
+    <div class="socialMedia">
+      <h4>Social Media:</h4>
+      <span><a class="website" target="_blank" href="{{userCtrl.singleVenue.facebook}}"><i class="fa fa-facebook"></i></a></span><span><a class="website" href="{{userCtrl.singleVenue.twitter}}"><i class="fa fa-twitter"></i></a></span>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      {{userCtrl.singleVenue.long_description}}
+    </p>
+    <p>
+      Birthday party venue: {{userCtrl.singleVenue.birthday_party_venue}}
+    </p>
 
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <p>Comments section - need to add</p>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>Comments:</p>
+    <div class="comments-container">
+      <ul>
+        <li ng-repeat="comment in userCtrl.singleVenue.comments">
+          <p>{{comment.content}}</p>
+          <p>{{comment.author}}</p>
+        </li>
+      </ul>
 
     </div>
+    <a href="" ng-click="showAddComment = !showAddComment">Leave a Comment</a>
+    {{comment.content}}
+    <div class="addComment" ng-show = "showAddComment">
 
+      <textarea ng-model="comment.content" placeholder="Write your comment here"></textarea>
+      <input type="text" ng-model="comment.author" placeholder="Your Name">
+      <button ng-click="userCtrl.addComment(userCtrl.singleVenue, comment)">Submit Comment</button>
+
+    </div>
   </div>
+
+</div>
 
 </div>

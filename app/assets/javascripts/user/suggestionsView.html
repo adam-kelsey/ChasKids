@@ -4,14 +4,14 @@
 
 <div class="container container-suggestForm">
 
-  <div class="routeLinks">
-    <a href="#/"><span class="fa-lg">
-      <i class="fa fa-home"></i>
-    </span>Home</a>
-    <a href="#/list"><span class="fa-lg">
-      <i class="fa fa-arrow-left"></i>
-    </span>Back to List</a>
-  </div>
+  <!--   <div class="routeLinks">
+  <a href="#/"><span class="fa-lg">
+  <i class="fa fa-home"></i>
+</span>Home</a> -->
+<!--     <a href="#/list"><span class="fa-lg">
+<i class="fa fa-arrow-left"></i>
+</span>Back to List</a> -->
+<!--   </div> -->
 
 
 <h2>Have a suggestion for a venue?</h2>
@@ -19,8 +19,8 @@
 <h3>Contact us:</h3>
 
 <div data-ng-controller="suggestForm">
-<!--   <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
-<div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div> -->
+  <!--   <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+  <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div> -->
   <form name="helpForm" novalidate role="form">
     <div class="form-group">
       <label for="name">Your Name </label>
@@ -31,7 +31,7 @@
     <div class="form-group">
       <label for="email">Your E-mail address</label>
       <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
-<!--       <span class="label label-danger" data-ng-show="submitted && helpForm.\$error.email">Invalid email!</span> -->
+      <!--       <span class="label label-danger" data-ng-show="submitted && helpForm.\$error.email">Invalid email!</span> -->
       <input type="email" name="email" data-ng-model="email" class="form-control" required />
     </div>
 

@@ -17,10 +17,8 @@
     .otherwise({
       redirectTo: '/not-found'
      })
+    })
 
-
-    });
-
-      // .constant('_', _)
+      .constant('_', _)
 
  })();

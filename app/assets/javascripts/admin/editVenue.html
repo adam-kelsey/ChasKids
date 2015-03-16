@@ -1,144 +1,144 @@
 <div class="container container-formVenue">
 
-<div class="routeLinks">
-  <a href="#/adminlist"><span class="fa-lg">
-  <i class="fa fa-arrow-left"></i>
-  </span>Back to List</a>
-</div>
-
-
-<h3>Currently editing {{adminCtrl.singleVenue.name}}</h3>
-<button ng-click="adminCtrl.deleteVenue(adminCtrl.singleVenue._id)">DELETE</button>
-
-<form class="form-horizontal" ng-submit="adminCtrl.editVenue(adminCtrl.singleVenue)">
-
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">facebook_id</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.facebook_id" value="{{adminCtrl.singleVenue.facebook_id}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Venue Category</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.category" value="{{adminCtrl.singleVenue.category}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Image</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.image" value="{{adminCtrl.singleVenue.image}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.name" value="{{adminCtrl.singleVenue.name}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Address 1</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.address_one" value="{{adminCtrl.singleVenue.address_one}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Address 2</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.address_two" value="{{adminCtrl.singleVenue.address_two}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">City</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.city" value="{{adminCtrl.singleVenue.city}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">State</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.state" value="{{adminCtrl.singleVenue.state}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Zip</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.zip" value="{{adminCtrl.singleVenue.zip}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.email" value="{{adminCtrl.singleVenue.email}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Phone</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.phone_number" value="{{adminCtrl.singleVenue.phone_number}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Facebook</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.facebook" value="{{adminCtrl.singleVenue.facebook}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Twitter</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.twitter" value="{{adminCtrl.singleVenue.twitter}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Website</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.website_url" value="{{adminCtrl.singleVenue.website_url}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Description Short</label>
-    <div class="col-sm-10">
-      <textarea type="text" class="form-control" ng-model="adminCtrl.singleVenue.short_description" value="{{adminCtrl.singleVenue.short_description}}"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Description Long</label>
-    <div class="col-sm-10">
-      <textarea type="text" class="form-control" ng-model="adminCtrl.singleVenue.long_description" value="{{adminCtrl.singleVenue.long_description}}"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Birthday Party Venue?</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_venue"  value="{{adminCtrl.singleVenue.birthday_party_venue}}"></p>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Birthday Party Description</label>
-    <div class="col-sm-10">
-      <textarea type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_description" value="{{adminCtrl.singleVenue.birthday_party_description}}"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Birthday Party Website</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_website_url" value="{{adminCtrl.singleVenue.birthday_party_website_url}}">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Birthday Party Phone</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_phone" value="{{adminCtrl.singleVenue.birthday_party_phone}}">
-    </div>
+  <div class="routeLinks">
+    <a href="#/adminlist"><span class="fa-lg">
+      <i class="fa fa-arrow-left"></i>
+    </span>Back to List</a>
   </div>
 
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit">Update Venue</button>
-    </div>
-  </div>
 
-</form>
+  <h3>Currently editing {{adminCtrl.singleVenue.name}}</h3>
+  <button ng-click="adminCtrl.deleteVenue(adminCtrl.singleVenue._id)">DELETE</button>
+
+  <form class="form-horizontal" ng-submit="adminCtrl.editVenue(adminCtrl.singleVenue)">
+
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">facebook_id</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.facebook_id" value="{{adminCtrl.singleVenue.facebook_id}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Venue Category</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.category" value="{{adminCtrl.singleVenue.category}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Image</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.image" value="{{adminCtrl.singleVenue.image}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.name" value="{{adminCtrl.singleVenue.name}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Address 1</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.address_one" value="{{adminCtrl.singleVenue.address_one}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Address 2</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.address_two" value="{{adminCtrl.singleVenue.address_two}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">City</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.city" value="{{adminCtrl.singleVenue.city}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">State</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.state" value="{{adminCtrl.singleVenue.state}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Zip</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.zip" value="{{adminCtrl.singleVenue.zip}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.email" value="{{adminCtrl.singleVenue.email}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Phone</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.phone_number" value="{{adminCtrl.singleVenue.phone_number}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Facebook</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.facebook" value="{{adminCtrl.singleVenue.facebook}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Twitter</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.twitter" value="{{adminCtrl.singleVenue.twitter}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Website</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.website_url" value="{{adminCtrl.singleVenue.website_url}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Description Short</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" ng-model="adminCtrl.singleVenue.short_description" value="{{adminCtrl.singleVenue.short_description}}"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Description Long</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" ng-model="adminCtrl.singleVenue.long_description" value="{{adminCtrl.singleVenue.long_description}}"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Venue?</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_venue"  value="{{adminCtrl.singleVenue.birthday_party_venue}}"></p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Description</label>
+      <div class="col-sm-10">
+        <textarea type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_description" value="{{adminCtrl.singleVenue.birthday_party_description}}"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Website</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_website_url" value="{{adminCtrl.singleVenue.birthday_party_website_url}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Birthday Party Phone</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="adminCtrl.singleVenue.birthday_party_phone" value="{{adminCtrl.singleVenue.birthday_party_phone}}">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit">Update Venue</button>
+      </div>
+    </div>
+
+  </form>
 
 </div>

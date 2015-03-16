@@ -1,11 +1,31 @@
+<!--
+<div class="routeLinks"> -->
+<!--   <a href="#/"><span class="fa-lg">
+<i class="fa fa-home"></i>
+</span>Home</a>
+<a href="#/list"><span class="fa-lg">
+<i class="fa fa-arrow-left"></i>
+</span>Back to List</a>
+</div> -->
 
-<div class="routeLinks">
-  <a href="#/"><span class="fa-lg">
-    <i class="fa fa-home"></i>
-  </span>Home</a>
-  <a href="#/list"><span class="fa-lg">
-    <i class="fa fa-arrow-left"></i>
-  </span>Back to List</a>
+<div class="container container-list" ng-controller="FavoritesController as faveCtrl">
+  <ul>
+    <li class="row" ng-repeat="venue in faveCtrl.favorites">
+      <div class="col-md-4">
+        <img data-ng-src={{venue.image}} alt="">
+      </div>
+      <div class="col-md-6">
+
+        <p>{{venue.name}}</p>
+        <p>{{venue.short_description}}</p>
+
+      </div>
+      <div class="col-md-2">
+        <a href="#/details/{{venue._id}}" class="btn btn-default">More Details</a>
+        <a ng-click="faveCtrl.deleteFavoriteVenue(venue)" href="" class="btn btn-default">Remove from Favorites</a>
+
+      </div>
+    </li>
+  </ul>
+
 </div>
-
-<h1>favorites view to come</h1>
