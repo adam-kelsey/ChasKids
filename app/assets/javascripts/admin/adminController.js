@@ -5,9 +5,15 @@
 
     var adminCtrl = this;
 
+
+    // adminCtrl.venues = VenueService.getVenues();   (for local)
+
     VenueService.getVenues().success(function(data){
       adminCtrl.venues = data;
     });
+
+
+    // adminCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);   (for local)
 
     VenueService.getSingleVenue($routeParams.venueId).success(function(data){
       adminCtrl.singleVenue = data;
@@ -19,12 +25,12 @@
       VenueService.addVenue(newVenue);
     };
 
-    //delete company
+    //delete venue
     adminCtrl.deleteVenue = function (id) {
       VenueService.deleteVenue(id);
     };
 
-    //edit company
+    //edit venue
     adminCtrl.editVenue = function (venue) {
       VenueService.editVenue (venue, venue._id); //or $routeParams.venueId?
     };
