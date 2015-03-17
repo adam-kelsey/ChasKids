@@ -43,8 +43,8 @@
       console.log('edit is working');
       console.log('service edit' + id);
       // $http.put('/venues.json/' + id).success(function(){
-        $http.put('/venues/' + id + '.json').success(function(){
-          // $http.put('/venues/#{venueId}.json').success(function(){
+      // $http.put('/venues/#{venueId}.json').success(function(){
+        $http.put('/venues/' + id + '.json', venue).success(function(){
         $location.path('/adminlist');
       });
       // var index = venues.indexOf(venue);
