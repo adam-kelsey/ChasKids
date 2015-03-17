@@ -17,6 +17,7 @@
       console.log('service getsinglevalue' + id);
       // return $http.get('/venues.json/' + id);
       return $http.get('/venues/' + id +'.json');
+      // return $http.get('/venues/' + id);
 
       // return venues[id];
     };
@@ -32,7 +33,7 @@
 
     var deleteVenue = function (id) {  //for local: (venue)
       console.log('service delete' + id);
-      $http.delete('/venues.json/' + id).success(function(){
+      $http.delete('/venues/' + id + '.json').success(function(){
         $location.path('/adminlist')
       });
       // var index = venues.indexOf(venue);
@@ -44,6 +45,7 @@
       console.log('service edit' + id);
       // $http.put('/venues.json/' + id).success(function(){
         $http.put('/venues/' + id + '.json').success(function(){
+          // $http.put('/venues/#{venueId}.json').success(function(){
         $location.path('/adminlist');
       });
       // var index = venues.indexOf(venue);

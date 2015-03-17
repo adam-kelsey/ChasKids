@@ -1,9 +1,48 @@
 .container-detail {
   background-color: white;
   min-height: 400px;
+  padding: 2em;
+  margin-top: 0.5em;
   img {
     max-height: 300px;
   }
+  border: thin solid $mainAccent;
+  border-radius: 1em;
+  .socialMedia i {
+    padding-right: 1.5em;
+    font-size: 2em;
+    color: $mainAccent;
+  }
+  .btn {
+    color: white;
+    background-color: $mainAccent;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    &:hover {
+      color: $mainAccent;
+      background-color: white;
+      border: $mainAccent;
+    }
+  }
+  .containerbottom {
+    padding-top: 1.4em;
+  }
+  textarea, input {
+    margin-bottom: 0.5em;
+    border-radius: 1em;
+    font-size: 1em;
+    padding: 0.5em;
+  }
+  textarea {
+    display: block;
+    height: 50px;
+    width: 66.66%;
+  }
+  input {
+    display: inline-block;
+    width: 40%;
+  }
+
 
 
 
