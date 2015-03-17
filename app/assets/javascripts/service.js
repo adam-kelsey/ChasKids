@@ -16,9 +16,7 @@
     var getSingleVenue = function (id) {
       console.log('service getsinglevalue' + id);
       // return $http.get('/venues.json/' + id);
-      return $http.get('/venues/' + id +'.json');
-      // return $http.get('/venues/' + id);
-
+      return $http.get('/venues/' + id +'.json')
       // return venues[id];
     };
 
@@ -41,6 +39,7 @@
     };
 
     var editVenue = function (venue, id) {  //for local: (venue, index)
+      console.log(venue);
       console.log('edit is working');
       console.log('service edit' + id);
       // $http.put('/venues.json/' + id).success(function(){
