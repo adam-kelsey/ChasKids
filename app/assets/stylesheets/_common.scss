@@ -1,5 +1,8 @@
+$mainAccent: #79BD8F;
+
+
 body {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 * {
@@ -16,4 +19,8 @@ a {
   &:visited {
     color: inherit;
   }
+}
+
+p {
+  font-size: 1.3em;
 }
