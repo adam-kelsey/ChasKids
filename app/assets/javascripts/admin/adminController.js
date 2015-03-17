@@ -32,7 +32,7 @@
 
     //edit venue
     adminCtrl.editVenue = function (venue) {
-      VenueService.editVenue (venue, venue._id); //or $routeParams.venueId?
+      VenueService.editVenue (venue, venue.id); //or $routeParams.venueId?
     };
 
   });
