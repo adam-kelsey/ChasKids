@@ -24,9 +24,6 @@ class VenuesController < ApplicationController
   #   @venue = Venue.new
   # end
 
-  # def edit
-  # end
-
   def create
     @venue = Venue.create venue_params
     respond_to do |format|
