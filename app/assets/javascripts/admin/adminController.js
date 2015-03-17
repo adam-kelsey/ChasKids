@@ -5,7 +5,6 @@
 
     var adminCtrl = this;
 
-
     // adminCtrl.venues = VenueService.getVenues();   (for local)
 
     VenueService.getVenues().success(function(data){
@@ -16,6 +15,7 @@
     // adminCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);   (for local)
 
     VenueService.getSingleVenue($routeParams.venueId).success(function(data){
+      console.log(data);
       adminCtrl.singleVenue = data;
       console.log('adminctrl get single venue');
       console.log($routeParams.venueId);
