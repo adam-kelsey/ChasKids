@@ -32,8 +32,7 @@ ActiveRecord::Schema.define(version: 20150313201239) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
-    t.integer  "facebook_id",                limit: 4
-    t.integer  "limit",                      limit: 4
+    t.integer  "facebook_id",                limit: 8
     t.string   "category",                   limit: 255
     t.string   "name",                       limit: 255
     t.string   "image",                      limit: 255
@@ -42,8 +41,8 @@ ActiveRecord::Schema.define(version: 20150313201239) do
     t.string   "address_two",                limit: 255
     t.string   "city",                       limit: 255
     t.string   "state",                      limit: 255
-    t.integer  "zip",                        limit: 4
-    t.integer  "phone_number",               limit: 4
+    t.integer  "zip",                        limit: 8
+    t.integer  "phone_number",               limit: 8
     t.string   "short_description",          limit: 255
     t.text     "long_description",           limit: 65535
     t.text     "facebook",                   limit: 65535
@@ -51,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150313201239) do
     t.boolean  "birthday_party_venue",       limit: 1
     t.text     "birthday_party_description", limit: 65535
     t.text     "birthday_party_website_url", limit: 65535
-    t.integer  "birthday_party_phone",       limit: 4
+    t.integer  "birthday_party_phone",       limit: 8
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
   end
