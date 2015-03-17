@@ -14,7 +14,10 @@
     };
 
     var getSingleVenue = function (id) {
-      return $http.get('/venues.json/' + id);
+      console.log('service getsinglevalue' + id);
+      // return $http.get('/venues.json/' + id);
+      return $http.get('/venues/' + id +'.json');
+
       // return venues[id];
     };
 
@@ -22,13 +25,13 @@
       // venue.comments = [];
       venue.comments = [{author: 'calvin', content: 'this is a comment'}];
       $http.post('/venues.json', venue).success(function(){
-        console.log("Hello");
         $location.path('/adminlist');
       });
       // venues.push(venue);
     };
 
     var deleteVenue = function (id) {  //for local: (venue)
+      console.log('service delete' + id);
       $http.delete('/venues.json/' + id).success(function(){
         $location.path('/adminlist')
       });
@@ -37,8 +40,10 @@
     };
 
     var editVenue = function (venue, id) {  //for local: (venue, index)
-      console.log('edit is working')
-      $http.put('/venues.json/' + id).success(function(){
+      console.log('edit is working');
+      console.log('service edit' + id);
+      // $http.put('/venues.json/' + id).success(function(){
+        $http.put('/venues/' + id + '.json').success(function(){
         $location.path('/adminlist');
       });
       // var index = venues.indexOf(venue);

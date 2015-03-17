@@ -15,7 +15,7 @@
       templateUrl: 'assets/admin/addNewVenue.html',
       controller: 'AdminController as adminCtrl'
     })
-    .when('/edit/:venueId', {
+    .when('/edit/:venueId', {  
       templateUrl: 'assets/admin/editVenue.html',
       controller: 'AdminController as adminCtrl'
     })
