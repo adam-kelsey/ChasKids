@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('ChasKids')
-  .factory('VenueService', function($http, $location) {  //check: $routeParams, (_) for lodash/underscore
+  .factory('VenueService', function($http, $location, $routeParams) {  //check: $routeParams, (_) for lodash/underscore
 
 
     var url = 'http://localhost:3000/venues';
@@ -30,7 +30,7 @@
     };
 
     var deleteVenue = function (id) {  //for local: (venue)
-      console.log('service delete' + id);
+      console.log('service delete', id);
       $http.delete('/venues/' + id + '.json').success(function(){
         $location.path('/adminlist')
       });
