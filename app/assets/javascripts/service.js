@@ -9,27 +9,30 @@
     // var venues = [];
 
     var getVenues = function () {
-      return $http.get(url);   //for endpoint (in place of url): '/venues.json'
+      return $http.get('/venues.json');   //for endpoint (in place of url): '/venues.json'
       // return venues;
     };
 
     var getSingleVenue = function (id) {
-      return $http.get(url + '/' + id);
+      console.log('service getsinglevalue' + id);
+      // return $http.get('/venues.json/' + id);
+      return $http.get('/venues/' + id +'.json');
+
       // return venues[id];
     };
 
     var addVenue = function (venue) {
       // venue.comments = [];
       venue.comments = [{author: 'calvin', content: 'this is a comment'}];
-      $http.post(url, venue).success(function(){
-        console.log("Hello");
+      $http.post('/venues.json', venue).success(function(){
         $location.path('/adminlist');
       });
       // venues.push(venue);
     };
 
     var deleteVenue = function (id) {  //for local: (venue)
-      $http.delete(url + '/' + id).success(function(){
+      console.log('service delete' + id);
+      $http.delete('/venues.json/' + id).success(function(){
         $location.path('/adminlist')
       });
       // var index = venues.indexOf(venue);
@@ -37,7 +40,10 @@
     };
 
     var editVenue = function (venue, id) {  //for local: (venue, index)
-      $http.put(url + '/' + id, venue).success(function(){
+      console.log('edit is working');
+      console.log('service edit' + id);
+      // $http.put('/venues.json/' + id).success(function(){
+        $http.put('/venues/' + id + '.json').success(function(){
         $location.path('/adminlist');
       });
       // var index = venues.indexOf(venue);
@@ -49,7 +55,7 @@
       console.log(venue);
       venue.comments.push(comment);
 
-      $http.put(url + '/' + venue._id, venue);
+      $http.put('/venues.json/' + venue.id, venue);
     };
 
 
@@ -94,16 +100,16 @@
     var favorites = [];
 
     var addFavoriteVenue = function (venue) {
-      $http.post(url, venue);
+      $http.post('/venues.json', venue);
       $rootScope.$broadcast('venue:created');
       // favorites.push(venue);
     };
     var getFavoriteVenues = function () {    //for endpoint (in place of url): '/favorites.json' ?
-      return $http.get(url);
+      return $http.get('/venues.json');
       // return favorites;
     };
     var deleteFavoriteVenue = function (id) {  //for local: venue
-      $http.delete(url + '/' + id);
+      $http.delete('/venues.json/' + id);
       $rootScope.$broadcast('venue:deleted');
       // var index = favorites.indexOf(venue);
       // favorites.splice(index,1);

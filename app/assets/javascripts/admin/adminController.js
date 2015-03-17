@@ -17,6 +17,8 @@
 
     VenueService.getSingleVenue($routeParams.venueId).success(function(data){
       adminCtrl.singleVenue = data;
+      console.log('adminctrl get single venue');
+      console.log($routeParams.venueId);
       console.log(data);
     });
 
@@ -27,12 +29,14 @@
 
     //delete venue
     adminCtrl.deleteVenue = function (id) {
+      console.log('adminctrl delete');
+      console.log(id);
       VenueService.deleteVenue(id);
     };
 
     //edit venue
     adminCtrl.editVenue = function (venue) {
-      VenueService.editVenue (venue, venue._id); //or $routeParams.venueId?
+      VenueService.editVenue (venue, venue.id); //venueId or venue.id or $routeParams.venueId?
     };
 
   });
