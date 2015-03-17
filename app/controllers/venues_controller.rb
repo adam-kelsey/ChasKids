@@ -13,8 +13,12 @@ class VenuesController < ApplicationController
     end
   end
 
-  # def show
-  # end
+  def show
+    @venue = Venue.find params[:id]
+    respond_to do |format|
+      format.json { render json: @venue.to_json }
+    end
+  end
 
   # def new
   #   @venue = Venue.new
@@ -30,11 +34,18 @@ class VenuesController < ApplicationController
     end
   end
 
+  def edit
+    @venues = Venue.all
+    respond_to do |format|
+      format.json { render json: @venues.to_json }
+    end
+  end
+
   def update
     @venue = Venue.find params[:id]
     @venue.update_attributes venue_params 
     respond_to do |format|
-      format.json { render json: @venues.to_json }
+      format.json { render json: @venue.to_json }
     end
   end
 
@@ -42,7 +53,7 @@ class VenuesController < ApplicationController
     @venue = Venue.find params[:id]
     @venue.destroy
     respond_to do |format|
-      format.json { render json: @venues.to_json }
+      format.json { render json: @venue.to_json }
     end
   end
 
