@@ -95,7 +95,7 @@
       // getCoords: getCoords
     };
   })
-  .factory('FaveService', function ($http, _) {  //$rootScope?
+  .factory('FaveService', function ($http, _, $rootScope) {  //$rootScope?
 
     // var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspotfaves';  //do I need a separate url
     var favorites = [];
@@ -109,13 +109,13 @@
       return $http.get('/venues.json');
       // return favorites;
     };
-    var deleteFavoriteVenue = function (id) {  //for local: venue
-      $http.delete('/venues.json/' + id);
-      $rootScope.$broadcast('venue:deleted');
+    var deleteFavoriteVenue = function (id) {  //for local: (venue), otherwise: (id)
+      $http.delete('/venues/' + id + '.json').success(function(){
+      });
+      // $rootScope.$broadcast('venue:deleted');
       // var index = favorites.indexOf(venue);
       // favorites.splice(index,1);
     };
-
 
     return {
       getFavoriteVenues: getFavoriteVenues,

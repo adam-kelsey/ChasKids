@@ -16,10 +16,23 @@ ul {
 
 a {
   text-decoration: none;
+  &:hover {
+
+  }
   &:visited {
     color: inherit;
   }
 }
+
+.navbar {
+  background-color: white;
+  color: $mainAccent;
+  font-size: 1.4em;
+  .navbar-brand {
+    font-size: 2em;
+  }
+  }
+
 
 p {
   font-size: 1.3em;
