@@ -20,10 +20,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # def new
-  #   @venue = Venue.new
-  # end
-
   def create
     @venue = Venue.create venue_params
     respond_to do |format|
@@ -31,13 +27,13 @@ class VenuesController < ApplicationController
     end
   end
 
-  def create_comment
-    @venue = Venue.find params[:id]
-    @comment = @venue.comments.create(comment_params, author: current_user.email)
-    respond to do |format|
-      format.json { render json: @venue.comments.to_json }
-    end
-  end
+  # def create_comment
+  #   @venue = Venue.find params[:id]
+  #   @comment = @venue.comments.create(comment_params, author: current_user.email)
+  #   respond to do |format|
+  #     format.json { render json: @venue.comments.to_json }
+  #   end
+  # end
 
   def edit
     @venues = Venue.all
@@ -69,11 +65,5 @@ private
 
   def venue_params
     params.require(:venue).permit(:facebook_id, :category, :name, :image, :website_url, :address_one, :address_two, :city, :state, :zip, :phone_number, :short_description, :long_description, :facebook, :twitter, :birthday_party_venue, :birthday_party_description, :birthday_party_website_url, :birthday_party_phone)
-  end
-
-  def comment_params
-    params.require(:comment).permit(
-      :content
-    )
   end
 end
