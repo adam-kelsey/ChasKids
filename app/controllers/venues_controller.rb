@@ -31,6 +31,34 @@ class VenuesController < ApplicationController
     end
   end
 
+  def create_comment
+    @venue = Venue.find params[:id]
+    @comment = @venue.comments.create(comment_params, author: current_user.email)
+    respond to do |format|
+      format.json { render json: @venue.comments.to_json }
+    end
+  end
+
+  # def create_comment
+  #   puts '#' * 50
+  #   puts params.inspect 
+  #   puts '#' * 50
+  #   @venue = Venue.find params[:id]
+  #   @comment = Comment.create()
+  #   @comment.update_attributes(venue_id: params[:id], content: params[:content], author: current_user.email)
+                
+  #   @comment = Comment.create(venue_id: params[:id], content: params[:comment][:content], author: current_user.email)
+
+  #   @comment =  @venue.comments.create(comment_params, author: current_user.email)
+  #   @comment.update_attributes(author: current_user.email)
+
+
+  #   @comment = @venue.comments.create comment_params
+  #   respond to do |format|
+  #     format.json { render json: @venue.comments.to_json }
+  #   end
+  # end
+
   def edit
     @venues = Venue.all
     respond_to do |format|
@@ -157,5 +185,11 @@ private
 
   def venue_params
     params.require(:venue).permit(:facebook_id, :category, :name, :image, :website_url, :address_one, :address_two, :city, :state, :zip, :phone_number, :short_description, :long_description, :facebook, :twitter, :birthday_party_venue, :birthday_party_description, :birthday_party_website_url, :birthday_party_phone)
+  end
+
+  def comment_params
+    params.require(:comment).permit(
+      :content
+    )
   end
 end

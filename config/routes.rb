@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  # devise_for :admins
+  devise_for :users
+  devise_for :admins
 
-  resources :venues
+  resources :venues do
+    post :create_comment
+    # resources :favorites
+  end
 
   # resources :admins
   # resources :venues do
