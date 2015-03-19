@@ -23,9 +23,12 @@
     // add comments in detail view
     userCtrl.addComment = function (venue, comment) {
       console.log('inside add comment in ctrl');
+      // var comment = {};
+      // comment.content = content;
+      // comment.author = author;
       VenueService.addComment(venue, comment);
       console.log('inside add comment in ctrl after VenueService command');
-      $scope.comment = {};
+      // $scope.comment = {};
     };
   })
 

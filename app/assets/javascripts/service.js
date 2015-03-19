@@ -22,7 +22,7 @@
 
     var addVenue = function (venue) {
       // venue.comments = [];
-      venue.comments = [{author: 'calvin', content: 'this is a comment'}];
+      // venue.comments = [{author: 'calvin', content: 'this is a comment'}];
       $http.post('/venues.json', venue).success(function(){
         $location.path('/adminlist');
       });
@@ -42,8 +42,6 @@
       console.log(venue);
       console.log('edit is working');
       console.log('service edit' + id);
-      // $http.put('/venues.json/' + id).success(function(){
-      // $http.put('/venues/#{venueId}.json').success(function(){
         $http.put('/venues/' + id + '.json', venue).success(function(){
         $location.path('/adminlist');
       });
@@ -54,9 +52,9 @@
   //comments
     var addComment = function (venue, comment) {
       console.log(venue);
-      venue.comments.push(comment);
+      // venue.comments.push(comment);
 
-      $http.put('/venues/' + venue.id + '.json', venue).success(function(){
+      $http.post('/venues/' + venue.id + '/comments.json', comment).success(function(){
         console.log('addComment for' + venue.id + 'works');
       });
     };

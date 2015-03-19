@@ -15,5 +15,5 @@ private
     params.require(:comment).permit(
       :content
     )
-  end    
+  end
 end
