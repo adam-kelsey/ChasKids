@@ -56,33 +56,12 @@
       console.log(venue);
       venue.comments.push(comment);
 
-      $http.put('/venues.json/' + venue.id, venue);
+      $http.put('/venues/' + venue.id + '.json', venue).success(function(){
+        console.log('addComment for' + venue.id + 'works');
+      });
     };
 
 
-
-
-
-
-    // from Brents Google Maps Service:
-    // var getCoords = function (company) {
-    //   var replacedStreet = company.address1.split(' ').join('+');
-    //   var replacedCity = company.city.split(' ').join('+');
-    //   var address = replacedStreet + ',+' + replacedCity + ',+SC';
-    //   var apiKey = '&key=AIzaSyDO1iZdri67JXkir3pRcn8NrPcA0sIOuDk'
-    //   var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + apiKey;
-    //
-    //   console.log(address);
-    //   $http.get(url).success(function(dataset){
-    //     console.log(dataset);
-    //     var compGeo = dataset.results[0].geometry.location
-    //     company.coords = {};
-    //     company.coords.longitude = compGeo.lng;
-    //
-    //     company.coords.latitude = compGeo.lat;
-    //     editCompany(company, company._id);
-    //   });
-    // };
 
 
     return {

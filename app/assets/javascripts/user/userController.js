@@ -5,15 +5,6 @@
 
     var userCtrl = this;
 
-    //
-    // from Brents map:
-    // $scope.map = {
-    //   center: {
-    //     latitude: 32.8433,
-    //     longitude: -79.9333
-    //   },
-    //   zoom: 12
-    // };
 
     // userCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);  (for local)
 
@@ -33,6 +24,7 @@
     userCtrl.addComment = function (venue, comment) {
       console.log('inside add comment in ctrl');
       VenueService.addComment(venue, comment);
+      console.log('inside add comment in ctrl after VenueService command');
       $scope.comment = {};
     };
   })
