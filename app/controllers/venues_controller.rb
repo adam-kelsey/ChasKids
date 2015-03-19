@@ -39,26 +39,6 @@ class VenuesController < ApplicationController
     end
   end
 
-  # def create_comment
-  #   puts '#' * 50
-  #   puts params.inspect 
-  #   puts '#' * 50
-  #   @venue = Venue.find params[:id]
-  #   @comment = Comment.create()
-  #   @comment.update_attributes(venue_id: params[:id], content: params[:content], author: current_user.email)
-                
-  #   @comment = Comment.create(venue_id: params[:id], content: params[:comment][:content], author: current_user.email)
-
-  #   @comment =  @venue.comments.create(comment_params, author: current_user.email)
-  #   @comment.update_attributes(author: current_user.email)
-
-
-  #   @comment = @venue.comments.create comment_params
-  #   respond to do |format|
-  #     format.json { render json: @venue.comments.to_json }
-  #   end
-  # end
-
   def edit
     @venues = Venue.all
     respond_to do |format|
@@ -81,102 +61,6 @@ class VenuesController < ApplicationController
       format.json { render json: @venue.to_json }
     end
   end
-
-  # def parks_and_playgrounds
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'parks_and_playgrounds'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
-
-  # def beaches_and_waterparks
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'beaches_and_waterparks'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
-
-  # def outdoor_sports_and_recreation
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'outdoor_sports_and_recreation'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
-
-  # def animals
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'animals'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
-
-  # def indoor_fun
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'indoor_fun'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
-
-  # def museums_and_historic_sites
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'museums_and_historic_sites'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
-
-  # def birthday_party_venues
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'birthday_party_venues'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
-
-  # def other_kids_resources
-  #   @venues = []
-  #   Venue.all.each do |venue|
-  #     if venue.category == 'other_kids_resources'
-  #       @venues.push(venue)
-  #     end
-  #     respond_to do |format|
-  #       format.json { render json: @venues.to_json }
-  #     end
-  #   end
-  # end
 
 private
   def set_venue

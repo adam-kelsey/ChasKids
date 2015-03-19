@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318215619) do
+ActiveRecord::Schema.define(version: 20150319153449) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20150318215619) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
-    t.integer  "facebook_id",                limit: 8
     t.string   "category",                   limit: 255
     t.string   "name",                       limit: 255
     t.string   "image",                      limit: 255
@@ -67,16 +66,16 @@ ActiveRecord::Schema.define(version: 20150318215619) do
     t.string   "address_two",                limit: 255
     t.string   "city",                       limit: 255
     t.string   "state",                      limit: 255
-    t.integer  "zip",                        limit: 8
-    t.integer  "phone_number",               limit: 8
+    t.integer  "zip",                        limit: 4
+    t.integer  "phone_number",               limit: 4
     t.string   "short_description",          limit: 255
     t.text     "long_description",           limit: 65535
     t.text     "facebook",                   limit: 65535
     t.text     "twitter",                    limit: 65535
-    t.boolean  "birthday_party_venue",       limit: 1
+    t.string   "birthday_party_venue",       limit: 255
     t.text     "birthday_party_description", limit: 65535
     t.text     "birthday_party_website_url", limit: 65535
-    t.integer  "birthday_party_phone",       limit: 8
+    t.integer  "birthday_party_phone",       limit: 4
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
   end
