@@ -52,10 +52,10 @@
   //comments
     var addComment = function (venue, comment) {
       console.log(venue);
-      // venue.comments.push(comment);
 
       $http.post('/venues/' + venue.id + '/comments.json', comment).success(function(){
         console.log('addComment for' + venue.id + 'works');
+        
       });
     };
 
