@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :admins
 
   resources :venues do
-    post :create_comment
+   resources :comments
     # resources :favorites
   end
 
