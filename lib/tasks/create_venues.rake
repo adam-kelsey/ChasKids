@@ -18,7 +18,9 @@ task create_venues: :environment do
       long_description: Faker::Lorem.paragraph,
       facebook: Faker::Internet.url,
       twitter: Faker::Internet.url,
-      birthday_party_venue: (1 == rand(2) ? true : false),
+      birthday_party_venue: [
+        "Yes", "No"
+        ].sample,
       birthday_party_description: Faker::Lorem.sentence,
       birthday_party_website_url: Faker::Internet.url,
       birthday_party_phone: Faker::PhoneNumber.phone_number

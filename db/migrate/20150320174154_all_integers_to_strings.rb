@@ -1,6 +1,5 @@
-class ChangeBirthdayPartyVenueBooleanToString < ActiveRecord::Migration
+class AllIntegersToStrings < ActiveRecord::Migration
   def change
-    remove_column :venues, :facebook_id, :string
     change_column :venues, :category, :string
     change_column :venues, :name, :string
     change_column :venues, :image, :string
