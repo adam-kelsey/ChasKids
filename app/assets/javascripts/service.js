@@ -22,7 +22,7 @@
 
     var addVenue = function (venue) {
       // venue.comments = [];
-      venue.comments = [{author: 'calvin', content: 'this is a comment'}];
+      // venue.comments = [{author: 'calvin', content: 'this is a comment'}];
       $http.post('/venues.json', venue).success(function(){
         $location.path('/adminlist');
       });
@@ -42,8 +42,6 @@
       console.log(venue);
       console.log('edit is working');
       console.log('service edit' + id);
-      // $http.put('/venues.json/' + id).success(function(){
-      // $http.put('/venues/#{venueId}.json').success(function(){
         $http.put('/venues/' + id + '.json', venue).success(function(){
         $location.path('/adminlist');
       });
@@ -54,35 +52,14 @@
   //comments
     var addComment = function (venue, comment) {
       console.log(venue);
-      venue.comments.push(comment);
 
-      $http.put('/venues.json/' + venue.id, venue);
+      $http.post('/venues/' + venue.id + '/comments.json', comment).success(function(){
+        console.log('addComment for' + venue.id + 'works');
+        
+      });
     };
 
 
-
-
-
-
-    // from Brents Google Maps Service:
-    // var getCoords = function (company) {
-    //   var replacedStreet = company.address1.split(' ').join('+');
-    //   var replacedCity = company.city.split(' ').join('+');
-    //   var address = replacedStreet + ',+' + replacedCity + ',+SC';
-    //   var apiKey = '&key=AIzaSyDO1iZdri67JXkir3pRcn8NrPcA0sIOuDk'
-    //   var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + apiKey;
-    //
-    //   console.log(address);
-    //   $http.get(url).success(function(dataset){
-    //     console.log(dataset);
-    //     var compGeo = dataset.results[0].geometry.location
-    //     company.coords = {};
-    //     company.coords.longitude = compGeo.lng;
-    //
-    //     company.coords.latitude = compGeo.lat;
-    //     editCompany(company, company._id);
-    //   });
-    // };
 
 
     return {

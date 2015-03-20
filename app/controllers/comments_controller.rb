@@ -22,5 +22,5 @@ private
       :content,
       :author
     )
-  end    
+  end
 end
