@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  devise_for :admins
 
   resources :venues do
    resources :comments
@@ -18,7 +17,7 @@ Rails.application.routes.draw do
   #   get :birthday_party_venues
   #   get :other_kids_resources
   # end
-  get 'home/index'
+  get 'is_admin' => "home#is_admin"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
