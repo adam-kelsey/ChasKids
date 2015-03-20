@@ -9,7 +9,7 @@
     // var venues = [];
 
     var getVenues = function () {
-      return $http.get('/venues.json');   //for endpoint (in place of url): '/venues.json'
+      return $http.get('/venues.json');
       // return venues;
     };
 
@@ -55,10 +55,31 @@
 
       $http.post('/venues/' + venue.id + '/comments.json', comment).success(function(){
         console.log('addComment for' + venue.id + 'works');
-        
+
       });
     };
 
+
+// Google map
+
+// var getCoords = function (venue) {
+//   var replacedStreet = venue.address_one.split(' ').join('+');
+//   var replacedCity = venue.city.split(' ').join('+');
+//   var address = replacedStreet + ',+' + replacedCity + ',+SC';
+//   var apiKey = '&key=AIzaSyAs8I10swE9u9aptwkQfffQPZgN29tmN1s'
+//   var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + apiKey;
+//
+//   console.log(address);
+//   $http.get(url).success(function(dataset){
+//     console.log(dataset);
+//     var venueGeo = dataset.results[0].geometry.location
+//     venue.coords = {};
+//     venue.coords.longitude = venueGeo.lng;
+//
+//     venue.coords.latitude = venueGeo.lat;
+//     editVenue(venue, venue._id);
+//   });
+// };
 
 
 

@@ -57,6 +57,15 @@
 
 <div class="row containerbottom">
   <div class="col-md-12">
+    <a href="" class ="btn btn-default" ng-click="showAddComment = !showAddComment">Leave a Comment</a>
+    <!--     {{comment.content}} -->
+    <div class="addComment" ng-show = "showAddComment">
+
+      <textarea ng-model="comment.content" placeholder="Write your comment here"></textarea>
+      <input type="text" ng-model="comment.author" placeholder="Your Name">
+      <button class ="btn btn-default" ng-click="userCtrl.addComment(userCtrl.singleVenue, comment)">Submit Comment</button>
+
+    </div>
     <h4>Comments:</h4>
     <div class="comments-container">
       <ul>
@@ -67,15 +76,7 @@
       </ul>
 
     </div>
-    <a href="" class ="btn btn-default" ng-click="showAddComment = !showAddComment">Leave a Comment</a>
-<!--     {{comment.content}} -->
-    <div class="addComment" ng-show = "showAddComment">
 
-      <textarea ng-model="comment.content" placeholder="Write your comment here"></textarea>
-      <input type="text" ng-model="comment.author" placeholder="Your Name">
-      <button class ="btn btn-default" ng-click="userCtrl.addComment(userCtrl.singleVenue, comment)">Submit Comment</button>
-
-    </div>
   </div>
 
 </div>
