@@ -16,7 +16,7 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find params[:id]
     respond_to do |format|
-      format.json { render json: @venue.to_json }
+      format.json { render :json => @venue }
     end
   end
 
@@ -64,6 +64,6 @@ private
   end
 
   def venue_params
-    params.require(:venue).permit(:facebook_id, :category, :name, :image, :website_url, :address_one, :address_two, :city, :state, :zip, :phone_number, :short_description, :long_description, :facebook, :twitter, :birthday_party_venue, :birthday_party_description, :birthday_party_website_url, :birthday_party_phone)
+    params.require(:venue).permit(:category, :name, :image, :website_url, :address_one, :address_two, :city, :state, :zip, :phone_number, :short_description, :long_description, :facebook, :twitter, :birthday_party_venue, :birthday_party_description, :birthday_party_website_url, :birthday_party_phone)
   end
 end
