@@ -1,21 +1,21 @@
 (function () {
   "use strict";
   angular.module('ChasKids')
-  .controller('UserController', function (VenueService, $routeParams, $location, $scope) {
-// add , uiGmapGoogleMapApi
+  .controller('UserController', function (VenueService, $routeParams, $location, $scope, uiGmapGoogleMapApi) {
+
     var userCtrl = this;
 
-    // uiGmapGoogleMapApi.then(function(maps) {
-    //
-    // });
-    //
-    // $scope.map = {
-    //   center: {
-    //     latitude: 32.8433,
-    //     longitude: -79.9333
-    //   },
-    //   zoom: 12
-    // };
+    uiGmapGoogleMapApi.then(function(maps) {
+
+    });
+
+    $scope.map = {
+      center: {
+        latitude: 32.8433,
+        longitude: -79.9333
+      },
+      zoom: 12
+    };
 
 
     // userCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);  (for local)
