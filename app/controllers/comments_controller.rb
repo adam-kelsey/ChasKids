@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-
+  # load_and_authorize_resource :nested => :venue
+  
   def index
     @comments = Comment.all
     @venue = Venue.find params[:venue_id]
