@@ -36,14 +36,22 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
+          <% if current_user.try(:admin) %>
           <li>
             <a href="/#/adminlist">Admin</a>
           </li>
-          <li>
-            <a href="/users/sign_in">Sign In</a>
-          </li>
+          <% end %>
+          <% if current_user %>
           <li>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          </li>
+          <% else %>
+          <li>
+            <a href="/users/sign_in">Sign In</a>
+          <% end %>
+          <% if user_signed_in? %>
+            <div><%= current_user.email %></div>
+          <% end %>
           </li>
         </ul>
       </div>
