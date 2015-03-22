@@ -51,6 +51,10 @@
       templateUrl: 'assets/user/detailView.html',
       controller: 'UserController as userCtrl'
     })
+    .when('/detailsparty/:venueId', {
+      templateUrl: 'assets/user/detailViewParty.html',
+      controller: 'UserController as userCtrl'
+    })
     .when('/suggestions', {
       templateUrl: 'assets/user/suggestionsView.html',
       controller: 'UserController as userCtrl'

@@ -2,9 +2,13 @@
   background-color: white;
   min-height: 400px;
   padding: 2em;
-  margin-top: 0.5em;
+  margin-top: 2em;
+  h2 {
+    padding-bottom: 0.5em;
+  }
   img {
     max-height: 300px;
+    border-radius: 100%;
   }
   border: thin solid $mainAccent;
   border-radius: 1em;
@@ -12,6 +16,9 @@
     padding-right: 1.5em;
     font-size: 2em;
     color: $mainAccent;
+  }
+  .groupButtons {
+    padding-top: 1em;
   }
   .btn {
     color: white;
@@ -23,6 +30,10 @@
       background-color: white;
       border: $mainAccent;
     }
+  }
+
+  .longdescription {
+    padding-top: 2em;
   }
   .containerbottom {
     padding-top: 1.4em;
@@ -42,8 +53,5 @@
     display: inline-block;
     width: 40%;
   }
-
-
-
 
 }

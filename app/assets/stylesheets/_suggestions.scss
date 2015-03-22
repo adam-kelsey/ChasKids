@@ -1,4 +1,4 @@
-.resources {
+.suggestions {
   min-height: 400px;
   padding: 3em;
   margin-top: 2em;
@@ -8,23 +8,16 @@
   h2 {
     padding-bottom: 0.5em;
   }
-ul {
-  list-style-type: disc;
-  list-style-position: outside;
-}
-  li {
 
-  font-size: 1.3em;
-  
-  }
   .btn {
-    color: $mainAccent;
+    color: white;
+    background-color: $mainAccent;
     font-size: 1em;
     margin-bottom: 0.5em;
     &:hover {
-      color: white;
-      background-color: $mainAccent;
-      border: none;
+      color: $mainAccent;
+      background-color: white;
+      border: $mainAccent;
     }
   }
 }

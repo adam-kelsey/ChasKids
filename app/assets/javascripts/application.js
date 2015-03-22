@@ -16,7 +16,9 @@
 //= require angular/angular
 //= require angular-route.min
 //= require angular-animate/angular-animate
-//= require underscore.min
+//= require lodash.js
+//= require googleMaps
+//= require angular-google-maps.js
 //= require app
 //= require admin/adminModule
 //= require admin/adminController
