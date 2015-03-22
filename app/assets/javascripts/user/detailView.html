@@ -11,9 +11,14 @@
 <div class="row">
   <div class="col-md-9">
     <h2>{{userCtrl.singleVenue.name}}</h2>
-    <img src="http://placehold.it/400x400" alt="">
-<!--     <img data-ng-src={{userCtrl.singleVenue.image}}/> -->
-
+    <div class="row">
+      <div class="col-md-6">
+        <img data-ng-src={{userCtrl.singleVenue.image}} alt=""/>
+      </div>
+      <div class="col-md-6">
+        <img data-ng-src={{userCtrl.singleVenue.image_two}} alt=""/>
+      </div>
+    </div>
   </div>
   <div class="col-md-3">
     <div class="groupButtons">
@@ -60,9 +65,8 @@
     <a href="" class ="btn btn-default" ng-click="showAddComment = !showAddComment">Leave a Comment</a>
     <!--     {{comment.content}} -->
     <div class="addComment" ng-show = "showAddComment">
-
-      <textarea ng-model="comment.content" placeholder="Write your comment here"></textarea>
       <input type="text" ng-model="comment.author" placeholder="Your Name">
+      <textarea ng-model="comment.content" placeholder="Write your comment here"></textarea>
       <button class ="btn btn-default" ng-click="userCtrl.addComment(userCtrl.singleVenue, comment)">Submit Comment</button>
 
     </div>
@@ -70,8 +74,9 @@
     <div class="comments-container">
       <ul>
         <li ng-repeat="comment in userCtrl.singleVenue.comments">
+          <p><b>{{comment.author}}</b>, {{comment.created_at | date: 'longDate'}}</p>
           <p>{{comment.content}}</p>
-          <p>{{comment.author}}</p>
+
         </li>
       </ul>
 

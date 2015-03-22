@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150322164802) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
+    t.integer  "limit",                      limit: 4
     t.string   "category",                   limit: 255
     t.string   "name",                       limit: 255
     t.string   "image",                      limit: 255

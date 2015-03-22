@@ -45,7 +45,7 @@ class VenuesController < ApplicationController
 
   def update
     @venue = Venue.find params[:id]
-    @venue.update_attributes venue_params 
+    @venue.update_attributes venue_params
     respond_to do |format|
       format.json { render json: @venue.to_json }
     end
