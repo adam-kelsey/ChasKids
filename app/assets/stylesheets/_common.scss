@@ -1,8 +1,12 @@
-$mainAccent: #79BD8F;
+/* \$mainAccent: #79BD8F; */
+$mainAccent: #9eb77b;
+$mainAccentFont: #464f38;
+
+
 
 
 body {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 * {
@@ -17,7 +21,7 @@ ul {
 a {
   text-decoration: none;
   &:hover {
-
+    text-decoration: none;
   }
   &:visited {
     color: inherit;
@@ -30,8 +34,17 @@ a {
   font-size: 1.4em;
   .navbar-brand {
     font-size: 2em;
+    img {
+      height: 100px;
+      margin-top: -30px;
+    }
   }
-  }
+}
+
+.navbar-fixed-top {
+  top: 0;
+  padding-top: 25px;
+}
 
 
 p {

@@ -47,10 +47,13 @@
     <p>
       {{userCtrl.singleVenue.long_description}}
     </p>
-    <p>
-      <b>Birthday party venue</b>: {{userCtrl.singleVenue.birthday_party_venue}}
+    <h4>Birthday party details:</h4>
+    <p>{{userCtrl.singleVenue.birthday_party_description}}</p>
+    <p><b>For more birthday party details:</b></p>
+    <p><b>Phone: </b>{{userCtrl.singleVenue.birthday_party_phone}}</p>
+    <p><b>Website: </b>
+    <a class = "website btn btn-default" target="_blank" href="{{userCtrl.singleVenue.birthday_party_website_url}}" class="btn btn-default">Website</a>
     </p>
-
   </div>
 
 </div>
