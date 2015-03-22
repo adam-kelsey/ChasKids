@@ -6,7 +6,7 @@ class Venue < ActiveRecord::Base
   has_many :comments
 
   def as_json(options={})
-    super(:only => [:category, :name, :image, :image_two, :website_url, :address_one, :address_two, :city, :state, :zip, :phone_number, :short_description, :long_description, :facebook, :twitter, :birthday_party_venue, :birthday_party_description, :birthday_party_website_url, :birthday_party_phone, :id],
+    super(:only => [:category, :name, :image, :image_two, :website_url, :address_one, :address_two, :city, :state, :zip, :latitude, :longitude, :phone_number, :short_description, :long_description, :facebook, :twitter, :birthday_party_venue, :birthday_party_description, :birthday_party_website_url, :birthday_party_phone, :id],
       :include => {
         :comments => {:only => [:content, :author, :created_at]}
       }

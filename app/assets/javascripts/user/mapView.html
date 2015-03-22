@@ -7,7 +7,7 @@
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
   <div data-ng-repeat="venue in userCtrl.venues | filter:query as results">
     <ui-gmap-marker
-    idKey="venue._id"
+    idKey="venue.id"
     coords="venue.coords"
     >
     <ui-gmap-window options="windowOptions" closeClick="closeClick()">
