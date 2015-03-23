@@ -11,9 +11,14 @@
 <div class="row">
   <div class="col-md-9">
     <h2>{{userCtrl.singleVenue.name}}</h2>
-    <img src="http://placehold.it/400x400" alt="">
-<!--     <img data-ng-src={{userCtrl.singleVenue.image}}/> -->
-
+    <div class="row">
+      <div class="col-md-6">
+        <img data-ng-src={{userCtrl.singleVenue.image}} alt=""/>
+      </div>
+      <div class="col-md-6">
+        <img data-ng-src={{userCtrl.singleVenue.image_two}} alt=""/>
+      </div>
+    </div>
   </div>
   <div class="col-md-3">
     <div class="groupButtons">
@@ -47,12 +52,11 @@
     <p>
       {{userCtrl.singleVenue.long_description}}
     </p>
-    <h4>Birthday party details:</h4>
+    <h4><b>Birthday parties:</b></h4>
     <p>{{userCtrl.singleVenue.birthday_party_description}}</p>
     <p><b>For more birthday party details:</b></p>
-    <p><b>Phone: </b>{{userCtrl.singleVenue.birthday_party_phone}}</p>
-    <p><b>Website: </b>
-    <a class = "website btn btn-default" target="_blank" href="{{userCtrl.singleVenue.birthday_party_website_url}}" class="btn btn-default">Website</a>
+    <p><b>Phone: </b>{{userCtrl.singleVenue.birthday_party_phone}}
+      <a class = "websiteParty btn btn-default" target="_blank" href="{{userCtrl.singleVenue.birthday_party_website_url}}" class="btn btn-default">Website</a>
     </p>
   </div>
 
@@ -63,18 +67,18 @@
     <a href="" class ="btn btn-default" ng-click="showAddComment = !showAddComment">Leave a Comment</a>
     <!--     {{comment.content}} -->
     <div class="addComment" ng-show = "showAddComment">
-
-      <textarea ng-model="comment.content" placeholder="Write your comment here"></textarea>
       <input type="text" ng-model="comment.author" placeholder="Your Name">
+      <textarea ng-model="comment.content" placeholder="Write your comment here"></textarea>
       <button class ="btn btn-default" ng-click="userCtrl.addComment(userCtrl.singleVenue, comment)">Submit Comment</button>
 
     </div>
     <h4>Comments:</h4>
     <div class="comments-container">
       <ul>
-        <li ng-repeat="comment in userCtrl.singleVenue.comments">
+        <li ng-repeat="comment in userCtrl.singleVenue.comments" ng-class-odd="'odd'" ng-class-even="'even'">
+          <p><b>{{comment.author}}</b>, {{comment.created_at | date: 'longDate'}}</p>
           <p>{{comment.content}}</p>
-          <p>{{comment.author}}</p>
+
         </li>
       </ul>
 

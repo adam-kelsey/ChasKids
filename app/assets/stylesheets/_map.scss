@@ -4,6 +4,7 @@
 .angular-google-map-container {
   height: 100vh;
   width:100%;
+  margin: 0 auto;
 }
 
 .mapWindow {
@@ -13,7 +14,7 @@
   img {
     max-width: 90%;
     margin: 1em auto;
-    border-radius: 5px;
+    border-radius: 100%;
   }
   .mapVenueDetail {
     h3 {

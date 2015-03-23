@@ -1,15 +1,18 @@
 
-
+<div class="container">
 <h3>Search kids venues<span class="searchbox-wrapper">
   <input ng-model="query" type="text" name="searchbox" placeholder="search">
-</span></h3>
-<div class="angular-google-map-container" ng-controller="UserController as userCtrl">
+</h3>
+<!-- <div class="angular-google-map-container" ng-controller="UserController as userCtrl"> -->
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-  <div data-ng-repeat="venue in userCtrl.venues | filter:query as results">
-    <ui-gmap-marker
-    idkey="marker.id"
-    coords="marker.coords"
-    >
+  <div >
+
+<ui-gmap-marker
+  data-ng-repeat="venue in userCtrl.venues | filter:query as results"
+  idkey="venue.id"
+  coords="venue.coords"
+  >
+
     <ui-gmap-window options="windowOptions" closeClick="closeClick()">
       <div class="mapWindow">
         <img data-ng-src={{venue.image}} alt=""/>
@@ -29,3 +32,4 @@
 </div>
 </ui-gmap-google-map>
 </div>
+<!-- </div> -->

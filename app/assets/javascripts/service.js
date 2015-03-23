@@ -53,24 +53,13 @@
 
 // Google map
 
-// var getCoords = function (venue) {
-//   // var replacedStreet = venue.address_one.split(' ').join('+');
-//   // var replacedCity = venue.city.split(' ').join('+');
-//   // var address = replacedStreet + ',+' + replacedCity + ',+SC';
-//   var apiKey = '&key=AIzaSyAs8I10swE9u9aptwkQfffQPZgN29tmN1s'
-//   var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + apiKey;
-//
-//   console.log(address);
-//   $http.get(url).success(function(dataset){
-//     console.log(dataset);
-//     var venueGeo = dataset.results[0].geometry.location
-//     venue.coords = {};
-//     venue.coords.longitude = venueGeo.lng;
-//
-//     venue.coords.latitude = venueGeo.lat;
-//     editVenue(venue, venue._id);
-//   });
-// };
+var getCoords = function (venue) {
+  $http.get('/venues/' + venue.id +'.json').success(function(){
+    venue.coords = {};
+    venue.coords.longitude = venue.longitude;
+    venue.coords.latitude = venue.latitude;
+  });
+};
 
 
 
@@ -92,7 +81,7 @@ var editVenue = function (venue, id) {  //for local: (venue, index)
       deleteVenue: deleteVenue,
       editVenue: editVenue,
       addComment: addComment,
-      // getCoords: getCoords
+      getCoords: getCoords
     };
   })
   .factory('FaveService', function ($http, _, $rootScope) {  //$rootScope?
