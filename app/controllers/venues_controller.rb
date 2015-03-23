@@ -16,6 +16,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find params[:id]
+    @
     respond_to do |format|
       format.json { render :json => @venue }
     end
@@ -59,7 +60,18 @@ class VenuesController < ApplicationController
     end
   end
 
+  def favorite
+    u = UserFavorite.new
+    u.venue_id = params[:id] 
+    u.user_id = current_user.id
+    u.save
+    respond to do |format|
+      format.json{ render nothing: true }
+    end
+  end
+
 private
+
   def set_venue
     @venue = Venue.find(params[:id])
   end

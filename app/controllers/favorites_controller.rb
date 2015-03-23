@@ -15,9 +15,9 @@ class FavoritesController < ApplicationController
   #   current_user
   # end
 
-  # def show
-  #   @venue = Venue.find params[:venue_id]
-  # end
+  def show
+    @venue = Venue.find params[:venue_id]
+  end
 
   # def edit
   # end
