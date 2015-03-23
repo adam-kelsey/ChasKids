@@ -24,14 +24,13 @@ class FavoritesController < ApplicationController
   # def update
   # end
 
-  # def destroy
-  #   @venue = Venue.find params[:venue_id]
-  #   @favorite = @venue.favorites.find params[:id]
-  #   @favorite.destroy
-  #   respond_to do |format|
-  #     format.json { render json: @favorite.to_json }
-  #   end
-  # end
+  def destroy
+    @favorite = UserFavorite.find params[:id]
+    @favorite.destroy
+    respond_to do |format|
+      format.json { render json: @favorite.to_json }
+    end
+  end
 
 
 end
