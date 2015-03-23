@@ -73,7 +73,7 @@
     <h4>Comments:</h4>
     <div class="comments-container">
       <ul>
-        <li ng-repeat="comment in userCtrl.singleVenue.comments">
+        <li ng-repeat="comment in userCtrl.singleVenue.comments" ng-class-odd="'odd'" ng-class-even="'even'">
           <p><b>{{comment.author}}</b>, {{comment.created_at | date: 'longDate'}}</p>
           <p>{{comment.content}}</p>
 

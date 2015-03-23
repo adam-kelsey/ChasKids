@@ -4,24 +4,17 @@
   .controller('UserController', function (VenueService, $routeParams, $location, $scope, uiGmapGoogleMapApi) {
 
     var userCtrl = this;
+    var latitude = '';
+    var longitude = '';
 
-    uiGmapGoogleMapApi.then(function(maps) {
-
-    });
-
-    $scope.map = {
-      center: {
-        latitude: 32.8433,
-        longitude: -79.9333
-      },
-      zoom: 12
-    };
 
 
     // userCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);  (for local)
 
     VenueService.getSingleVenue($routeParams.venueId).success(function (data) {
       userCtrl.singleVenue = data;
+      latitude=userCtrl.singleVenue.latitude;
+      longitude=userCtrl.singleVenue.longitude;
       console.log(data);
     });
 
@@ -39,6 +32,28 @@
       console.log('inside add comment in ctrl after VenueService command');
       $scope.comment = {};
     };
+
+
+    uiGmapGoogleMapApi.then(function(maps) {
+
+    });
+
+    $scope.map = {
+      center: {
+        latitude: 32.8433,
+        longitude: -79.9333
+      },
+      zoom: 12
+    };
+
+    // $scope.marker = {
+    //   id: userCtrl.singleVenue.id,
+    //   coords: {
+    //     latitude: userCtrl.singleVenue.latitude,
+    //     longitude: userCtrl.singleVenue.longitude
+    //   }
+    // };
+
   })
 
 

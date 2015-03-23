@@ -3,12 +3,12 @@
 <h3>Search kids venues<span class="searchbox-wrapper">
   <input ng-model="query" type="text" name="searchbox" placeholder="search">
 </span></h3>
-
+<div class="angular-google-map-container" ng-controller="UserController as userCtrl">
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
   <div data-ng-repeat="venue in userCtrl.venues | filter:query as results">
     <ui-gmap-marker
-    idKey="venue.id"
-    coords="venue.coords"
+    idkey="marker.id"
+    coords="marker.coords"
     >
     <ui-gmap-window options="windowOptions" closeClick="closeClick()">
       <div class="mapWindow">
@@ -28,3 +28,4 @@
   </ui-gmap-marker>
 </div>
 </ui-gmap-google-map>
+</div>
