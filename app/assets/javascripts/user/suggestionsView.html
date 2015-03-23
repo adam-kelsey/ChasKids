@@ -1,17 +1,6 @@
 
-<!-- still need to add controller and js - see https://www.lullabot.com/blog/article/processing-forms-angularjs and following github code-->
-<!-- https://github.com/juampy72/angularjs_form/blob/master/js/app.js -->
-<!-- or use this basic angular form: https://docs.angularjs.org/guide/forms -->
 <div class="container container-suggestForm">
 
-  <!--   <div class="routeLinks">
-  <a href="#/"><span class="fa-lg">
-  <i class="fa fa-home"></i>
-</span>Home</a> -->
-<!--     <a href="#/list"><span class="fa-lg">
-<i class="fa fa-arrow-left"></i>
-</span>Back to List</a> -->
-<!--   </div> -->
 
 <div class="row">
   <div class="col-md-10 col-md-offset-1 suggestions">
@@ -20,33 +9,26 @@
 <h2>Are you a business owner who would like to list your venue?</h2>
 <h3>Contact us:</h3>
 
-<!-- <div data-ng-controller="suggestForm"> -->
-<!--   <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div> -->
-<!--   <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div> -->
-  <form name="helpForm" novalidate role="form">
-    <div class="form-group">
+  <form name="helpForm" ng-submit="submitForm(helpForm.$valid)" novalidate role="form">
+    <div class="form-group" ng-class="{ 'has-error' : helpForm.name.$invalid && !helpForm.name.$pristine && submitted}">
       <label for="name">Your Name </label>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
       <input type="text" name="name" data-ng-model="name" class="form-control" required />
+      <p ng-show="helpForm.name.$invalid && !helpForm.name.$pristine && submitted" class="help-block">Name required</p>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : helpForm.email.$invalid && !helpForm.email.$pristine && submitted}">
       <label for="email">Your E-mail address</label>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
-<!--       <span class="label label-danger" data-ng-show="submitted && helpForm.\\\\$error.email">Invalid email!</span> -->
       <input type="email" name="email" data-ng-model="email" class="form-control" required />
+      <p ng-show="helpForm.email.$invalid && !helpForm.email.$pristine && submitted" class="help-block">Valid e-mail required</p>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : helpForm.suggestions.$invalid && !helpForm.suggestions.$pristine && submitted}">
       <label for="suggestions">Your suggestion</label>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
-      <textarea name="comments" data-ng-model="comments" class="form-control" required></textarea>
+      <textarea rows="4" name="suggestions" data-ng-model="suggestions" class="form-control" required></textarea>
+      <p ng-show="helpForm.suggestions.$invalid && !helpForm.suggestions.$pristine && submitted" class="help-block">Enter your suggestion</p>
     </div>
-    <button data-ng-click="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default">Submit</button>
   </form>
     </div>
   </div>
 </div>
-
-
-<!-- </div> -->

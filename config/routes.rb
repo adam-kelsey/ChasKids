@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :venues do
     resources :comments
     member do
-      patch "favorite"
+      post "favorite"
     end
   end
     # resources :favorites

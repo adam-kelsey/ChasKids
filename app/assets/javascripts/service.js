@@ -61,7 +61,7 @@ var getCoords = function (venue) {
   });
 };
 
-
+//edit Venue
 
 var editVenue = function (venue, id) {  //for local: (venue, index)
   console.log(venue);
@@ -84,25 +84,27 @@ var editVenue = function (venue, id) {  //for local: (venue, index)
       getCoords: getCoords
     };
   })
-  .factory('FaveService', function ($http, _, $rootScope) {  //$rootScope?
+  .factory('FaveService', function ($http, _, $rootScope, $routeParams) {  //$rootScope?
 
     // var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspotfaves';  //do I need a separate url
-    var favorites = [];
+    // var favorites = [];
+    var url = 'http://localhost:3000/favorites';
 
     var addFavoriteVenue = function (venue) {
       // $http.post('/venues.json', venue);
-      $http.post('/favorite_venue/' + id + '.json', venue);
-      $rootScope.$broadcast('venue:created');
+      $http.post('/venues/' + venue.id + '/favorite.json', venue);
+      console.log(venue.name);
+      $rootScope.$broadcast('favorite:created');
       // favorites.push(venue);
     };
     var getFavoriteVenues = function () {    //for endpoint (in place of url): '/favorites.json' ?
       // return $http.get('/venues.json');
-      return $http.get('/favorite_venue.json');
+      return $http.get('/favorites.json');
       // return favorites;
     };
     var deleteFavoriteVenue = function (id) {  //for local: (venue), otherwise: (id)
       // $http.delete('/venues/' + id + '.json').success(function(){
-      $http.delete('/favorite_venue/' + id + '.json').success(function(){
+      $http.delete('/favorites/' + id + '.json').success(function(){
       });
       // $rootScope.$broadcast('venue:deleted');
       // var index = favorites.indexOf(venue);
