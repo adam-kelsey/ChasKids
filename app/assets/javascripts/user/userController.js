@@ -4,8 +4,7 @@
   .controller('UserController', function (VenueService, $routeParams, $location, $scope, uiGmapGoogleMapApi) {
 
     var userCtrl = this;
-    // var latitude = '';
-    // var longitude = '';
+
 
 
 
@@ -14,12 +13,6 @@
       VenueService.getSingleVenue($routeParams.venueId).success(function (data) {
         userCtrl.singleVenue = data;
         console.log(data);
-
-        // latitude=userCtrl.singleVenue.latitude
-        // userCtrl.executeMap(latitude);
-        // longitude=userCtrl.singleVenue.longitude
-        // userCtrl.executeMap(longitude);
-
       });
 
     }
@@ -44,12 +37,22 @@
     };
 
 
+    //function to submit suggestions form after validation
+    $scope.submitForm = function(isValid) {
+        if (isValid) {
+          alert('Thank you for submitting your sugestions!');
+        };
+        $scope.submitted = true;
+        $location.path('/');
+    };
+
+
+
     uiGmapGoogleMapApi.then(function(maps) {
 
     });
 
-    // userCtrl.executeMap = function(longitude){
-    //   console.log('this is data' + longitude);
+
 
       $scope.map = {
         center: {
@@ -58,16 +61,6 @@
         },
         zoom: 12
       }
-
-      // $scope.marker = {
-      //   id: 0,
-      //   coords: {
-      //     latitude: userCtrl.singleVenue.latitude,
-      //     longitude: userCtrl.singleVenue.longitude
-      //   }
-      // };
-
-    // };
 
   })
 

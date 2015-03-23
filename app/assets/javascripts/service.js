@@ -61,7 +61,7 @@ var getCoords = function (venue) {
   });
 };
 
-
+//edit Venue
 
 var editVenue = function (venue, id) {  //for local: (venue, index)
   console.log(venue);
@@ -84,10 +84,11 @@ var editVenue = function (venue, id) {  //for local: (venue, index)
       getCoords: getCoords
     };
   })
-  .factory('FaveService', function ($http, _, $rootScope) {  //$rootScope?
+  .factory('FaveService', function ($http, _, $rootScope, $routeParams) {  //$rootScope?
 
     // var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspotfaves';  //do I need a separate url
-    var favorites = [];
+    // var favorites = [];
+    var url = 'http://localhost:3000/favorites';
 
     var addFavoriteVenue = function (venue) {
       // $http.post('/venues.json', venue);
