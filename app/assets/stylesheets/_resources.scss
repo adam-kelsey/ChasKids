@@ -1,21 +1,23 @@
 .resources {
   min-height: 400px;
-  padding: 3em;
+  padding: 4em;
   margin-top: 2em;
   border: thin solid $mainAccent;
   border-radius: 1em;
+  background-color: $mainAccentLight;
 
   h2 {
-    padding-bottom: 0.5em;
+    padding-bottom: 1.5em;
   }
 ul {
   list-style-type: disc;
   list-style-position: outside;
+  padding-bottom: 1em;
 }
   li {
 
   font-size: 1.3em;
-  
+
   }
   .btn {
     color: $mainAccent;

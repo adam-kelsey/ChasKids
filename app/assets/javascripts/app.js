@@ -15,8 +15,12 @@
        templateUrl: 'assets/splash.html',
        controller: 'UserController as userCtrl'
      })
+     .when('/not_found', {
+       templateUrl: 'assets/404.html',
+       controller: 'UserController as userCtrl'
+     })
     .otherwise({
-      redirectTo: '/not-found'
+      redirectTo: '/not_found'
      })
     })
 

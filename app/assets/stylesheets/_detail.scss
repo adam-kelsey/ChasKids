@@ -55,3 +55,25 @@
   }
 
 }
+
+.comments-container {
+  .odd {
+    background-color: $mainAccentLight;
+  }
+  .even {
+    background-color: white;
+  }
+  ul {
+    margin-left:-2em;
+  }
+  li {
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    padding-left: 1.5em;
+    border-radius: 5px;
+  }
+}
+
+.websiteParty {
+  margin-left: 2em;
+}
