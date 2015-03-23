@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :venues do
-   resources :comments
-    # resources :favorites
+    resources :comments
+    member do
+      patch "favorite"
+    end
   end
+    # resources :favorites
 
   # resources :admins
   # resources :venues do

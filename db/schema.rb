@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322182716) do
+ActiveRecord::Schema.define(version: 20150323144511) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20150322182716) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "user_favorites", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "venue_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -59,7 +66,6 @@ ActiveRecord::Schema.define(version: 20150322182716) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: :cascade do |t|
-    t.integer  "limit",                      limit: 4
     t.string   "category",                   limit: 255
     t.string   "name",                       limit: 255
     t.string   "image",                      limit: 255
