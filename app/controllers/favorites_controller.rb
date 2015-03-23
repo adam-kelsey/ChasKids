@@ -1,7 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.all
-    @venue = Venue.find params[:venue_id]
+    @favorites = current_user.favorites
     respond_to do |format|
       format.json { render json: @favorites.to_json }
     end
@@ -15,9 +14,9 @@ class FavoritesController < ApplicationController
   #   current_user
   # end
 
-  def show
-    @venue = Venue.find params[:venue_id]
-  end
+  # def show
+  #   @venue = Venue.find params[:venue_id]
+  # end
 
   # def edit
   # end
@@ -25,14 +24,14 @@ class FavoritesController < ApplicationController
   # def update
   # end
 
-  def destroy
-    @venue = Venue.find params[:venue_id]
-    @favorite = @venue.favorites.find params[:id]
-    @favorite.destroy
-    respond_to do |format|
-      format.json { render json: @favorite.to_json }
-    end
-  end
+  # def destroy
+  #   @venue = Venue.find params[:venue_id]
+  #   @favorite = @venue.favorites.find params[:id]
+  #   @favorite.destroy
+  #   respond_to do |format|
+  #     format.json { render json: @favorite.to_json }
+  #   end
+  # end
 
 
 end
