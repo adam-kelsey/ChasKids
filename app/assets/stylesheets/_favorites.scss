@@ -1,0 +1,23 @@
+.containerList {
+  background-color: white;
+  min-height: 200px;
+  padding: 2em;
+  margin-top: 0.5em;
+  img {
+    max-height: 200px;
+    border-radius: 100%;
+  }
+  border: thin solid $mainAccent;
+  border-radius: 1em;
+  .btn {
+    color: white;
+    background-color: $mainAccent;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    &:hover {
+      color: $mainAccent;
+      background-color: white;
+      border: $mainAccent;
+    }
+  }
+}
