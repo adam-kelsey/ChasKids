@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = current_user.favorites
+    @favorites = current_user.favorite_venues
     respond_to do |format|
       format.json { render json: @favorites.to_json }
     end

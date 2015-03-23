@@ -71,7 +71,10 @@
 
     var faveCtrl = this;
 
-    faveCtrl.favorites = FaveService.getFavoriteVenues();
+    FaveService.getFavoriteVenues().success(function (data) {
+      faveCtrl.venues = data;
+      console.log(data);
+    });
 
 
     faveCtrl.addFavoriteVenue = function (venue) {
@@ -79,7 +82,7 @@
       console.log('fave venue added');
     };
     faveCtrl.deleteFavoriteVenue = function (venue) {
-      FaveService.deleteFavoriteVenue(venue);
+      FaveService.deleteFavoriteVenue(venue.id);
     };
 
   });
