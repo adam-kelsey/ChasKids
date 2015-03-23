@@ -90,16 +90,19 @@ var editVenue = function (venue, id) {  //for local: (venue, index)
     var favorites = [];
 
     var addFavoriteVenue = function (venue) {
-      $http.post('/venues.json', venue);
+      // $http.post('/venues.json', venue);
+      $http.post('/favorite_venue/' + id + '.json', venue);
       $rootScope.$broadcast('venue:created');
       // favorites.push(venue);
     };
     var getFavoriteVenues = function () {    //for endpoint (in place of url): '/favorites.json' ?
-      return $http.get('/venues.json');
+      // return $http.get('/venues.json');
+      return $http.get('/favorite_venue.json');
       // return favorites;
     };
     var deleteFavoriteVenue = function (id) {  //for local: (venue), otherwise: (id)
-      $http.delete('/venues/' + id + '.json').success(function(){
+      // $http.delete('/venues/' + id + '.json').success(function(){
+      $http.delete('/favorite_venue/' + id + '.json').success(function(){
       });
       // $rootScope.$broadcast('venue:deleted');
       // var index = favorites.indexOf(venue);
