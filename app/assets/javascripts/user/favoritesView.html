@@ -1,14 +1,6 @@
-<!--
-<div class="routeLinks"> -->
-<!--   <a href="#/"><span class="fa-lg">
-<i class="fa fa-home"></i>
-</span>Home</a>
-<a href="#/list"><span class="fa-lg">
-<i class="fa fa-arrow-left"></i>
-</span>Back to List</a>
-</div> -->
 
-<div class="container container-list" ng-controller="FavoritesController as faveCtrl">
+
+<div class="container containerListFave" ng-controller="FavoritesController as faveCtrl">
   <ul>
     <li class="row" ng-repeat="venue in faveCtrl.venues">
       <div class="col-md-4">
@@ -16,7 +8,7 @@
       </div>
       <div class="col-md-6">
 
-        <p>{{venue.name}}</p>
+        <h3>{{venue.name}}</h3>
         <p>{{venue.short_description}}</p>
 
       </div>

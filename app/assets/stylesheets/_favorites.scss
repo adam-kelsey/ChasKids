@@ -1,0 +1,27 @@
+.containerListFave {
+  background-color: white;
+  min-height: 200px;
+  padding: 2em;
+  margin-top: 0.5em;
+  img {
+    max-height: 200px;
+    border-radius: 100%;
+  }
+  .btn {
+    color: white;
+    background-color: $mainAccent;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    &:hover {
+      color: $mainAccent;
+      background-color: white;
+      border: $mainAccent;
+    }
+  }
+  li {
+    border: thin solid $mainAccent;
+    border-radius: 1em;
+    padding: 2em;
+    margin-bottom: 1em;
+  }
+}

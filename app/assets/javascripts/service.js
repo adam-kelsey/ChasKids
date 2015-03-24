@@ -1,46 +1,47 @@
 (function () {
   "use strict";
   angular.module('ChasKids')
-  .factory('VenueService', function($http, $location, $routeParams) {  //check: $routeParams, (_) for lodash/underscore
+  .factory('VenueService', ['$http', '$location', '$interval', '$routeParams', function($http, $location, $interval, $routeParams) {
 
 
-    var url = 'http://localhost:3000/venues';
+    var url = '/venues';
+    // var url = 'http://localhost:3000/venues';
+
+    // var url = 'https://totspot.herokuapp.com/venues';
 
     // var venues = [];
 
     var getVenues = function () {
       return $http.get('/venues.json');
-      // return venues;
+
     };
 
     var getSingleVenue = function (id) {
       console.log('service getsinglevalue' + id);
-      // return $http.get('/venues.json/' + id);
       return $http.get('/venues/' + id +'.json')
-      // return venues[id];
     };
 
     var addVenue = function (venue) {
-      // venue.comments = [];
-      // venue.comments = [{author: 'calvin', content: 'this is a comment'}];
       $http.post('/venues.json', venue).success(function(){
         $location.path('/adminlist');
       });
-      // venues.push(venue);
     };
 
-    var deleteVenue = function (id) {  //for local: (venue)
+    var deleteVenue = function (id) {
       console.log('service delete', id);
       $http.delete('/venues/' + id + '.json').success(function(){
         $location.path('/adminlist')
       });
-      // var index = venues.indexOf(venue);
-      // venues.splice(index,1);
     };
 
 
 
   //comments
+
+    // var getComments = function (venue) {
+    //   return $http.get('/venues/' + venue.id + '/comments.json');
+    // };
+
     var addComment = function (venue, comment) {
       console.log(venue);
 
@@ -51,27 +52,25 @@
     };
 
 
-// Google map
+// Google Map
 
-var getCoords = function (venue) {
-  $http.get('/venues/' + venue.id +'.json').success(function(){
-    venue.coords = {};
-    venue.coords.longitude = venue.longitude;
-    venue.coords.latitude = venue.latitude;
-  });
-};
+  var getCoords = function (venue) {
+    $http.get('/venues/' + venue.id +'.json').success(function(){
+      venue.coords = {};
+      venue.coords.longitude = venue.longitude;
+      venue.coords.latitude = venue.latitude;
+    });
+  };
 
 //edit Venue
 
-var editVenue = function (venue, id) {  //for local: (venue, index)
-  console.log(venue);
-  console.log('edit is working');
-  console.log('service edit' + id);
-  $http.put('/venues/' + id + '.json', venue).success(function(){
-    $location.path('/adminlist');
-  });
-  // var index = venues.indexOf(venue);
-  // venues[index] = venue;
+  var editVenue = function (venue, id) {
+    console.log(venue);
+    console.log('service edit' + id);
+    $http.put('/venues/' + id + '.json', venue).success(function(){
+      $location.path('/adminlist');
+    });
+
 };
 
     return {
@@ -80,35 +79,30 @@ var editVenue = function (venue, id) {  //for local: (venue, index)
       addVenue: addVenue,
       deleteVenue: deleteVenue,
       editVenue: editVenue,
+      // getComments: getComments,
       addComment: addComment,
       getCoords: getCoords
     };
-  })
-  .factory('FaveService', function ($http, _, $rootScope, $routeParams) {  //$rootScope?
+  }])
+  .factory('FaveService', ['$http', '_', '$rootScope', '$routeParams', function ($http, _, $rootScope, $routeParams) {
 
-    // var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspotfaves';  //do I need a separate url
+    // var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspotfaves';
     // var favorites = [];
-    var url = 'http://localhost:3000/favorites';
+    // var url = '/favorites';
 
     var addFavoriteVenue = function (venue) {
-      // $http.post('/venues.json', venue);
       $http.post('/venues/' + venue.id + '/favorite.json', venue);
       console.log(venue.name);
       $rootScope.$broadcast('favorite:created');
-      // favorites.push(venue);
     };
-    var getFavoriteVenues = function () {    //for endpoint (in place of url): '/favorites.json' ?
-      // return $http.get('/venues.json');
+
+    var getFavoriteVenues = function () {
       return $http.get('/favorites.json');
-      // return favorites;
     };
-    var deleteFavoriteVenue = function (id) {  //for local: (venue), otherwise: (id)
-      // $http.delete('/venues/' + id + '.json').success(function(){
+
+    var deleteFavoriteVenue = function (id) {
       $http.delete('/favorites/' + id + '.json').success(function(){
       });
-      // $rootScope.$broadcast('venue:deleted');
-      // var index = favorites.indexOf(venue);
-      // favorites.splice(index,1);
     };
 
     return {
@@ -118,5 +112,5 @@ var editVenue = function (venue, id) {  //for local: (venue, index)
 
     };
 
-  });
+  }]);
 })();

@@ -1,18 +1,16 @@
 (function () {
   "use strict";
   angular.module('ChasKids')
-  .controller('AdminController', function (VenueService, $scope, $location, $routeParams){
+  .controller('AdminController', ['VenueService', '$scope', '$location', '$routeParams', function (VenueService, $scope, $location, $routeParams){
 
     var adminCtrl = this;
 
-    // adminCtrl.venues = VenueService.getVenues();   (for local)
 
     VenueService.getVenues().success(function(data){
       adminCtrl.venues = data;
     });
 
 
-    // adminCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);   (for local)
 
     VenueService.getSingleVenue($routeParams.venueId).success(function(data){
       console.log(data);
@@ -36,9 +34,9 @@
 
     //edit venue
     adminCtrl.editVenue = function (venue) {
-      VenueService.editVenue (venue, $routeParams.venueId); //venueId or venue.id or $routeParams.venueId?
+      VenueService.editVenue (venue, $routeParams.venueId);
     };
 
-  });
+  }]);
 
 })();
