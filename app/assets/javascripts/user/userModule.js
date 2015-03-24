@@ -5,7 +5,7 @@
   'ngRoute',
   // 'ngAnimate'
   ])
-  .config(function($routeProvider){
+  .config(['$routeProvider', function($routeProvider){
     $routeProvider
     .when('/animals', {
       templateUrl: 'assets/user/catListViewAnimals.html',
@@ -63,6 +63,6 @@
       templateUrl: 'assets/user/otherResources.html',
       controller: 'UserController as userCtrl'
     })
-  });
+  }]);
 
 })();

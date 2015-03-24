@@ -5,7 +5,7 @@
   'ngRoute',
   // 'ngAnimate'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
     .when('/adminlist', {
       templateUrl: 'assets/admin/adminListView.html',
@@ -15,11 +15,11 @@
       templateUrl: 'assets/admin/addNewVenue.html',
       controller: 'AdminController as adminCtrl'
     })
-    .when('/edit/:venueId', {  
+    .when('/edit/:venueId', {
       templateUrl: 'assets/admin/editVenue.html',
       controller: 'AdminController as adminCtrl'
     })
 
-  });
+  }]);
 
 })();
