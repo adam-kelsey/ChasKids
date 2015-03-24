@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :venues do
     resources :comments
+    collection do
+      resources :birthdays
+    end
     member do
       post "favorite"
     end

@@ -1,14 +1,11 @@
 (function () {
   "use strict";
   angular.module('ChasKids')
-  .controller('UserController', function (VenueService, $routeParams, $location, $scope, uiGmapGoogleMapApi) {
+  .controller('UserController', ['VenueService', '$routeParams', '$location', '$scope', 'uiGmapGoogleMapApi', function (VenueService, $routeParams, $location, $scope, uiGmapGoogleMapApi) {
 
     var userCtrl = this;
 
 
-
-
-    // userCtrl.singleVenue = VenueService.getSingleVenue($routeParams.venueId);  (for local)
     if($routeParams.venueId) {
       VenueService.getSingleVenue($routeParams.venueId).success(function (data) {
         userCtrl.singleVenue = data;
@@ -17,7 +14,6 @@
 
     }
 
-    // userCtrl.venues = VenueService.getVenues();  (for local)
     VenueService.getVenues().success(function (data) {
       userCtrl.venues = data;
       for( var i = 0; i < userCtrl.venues.length ; i++) {
@@ -29,6 +25,13 @@
     userCtrl.currentIndex = $routeParams.venueId;
 
     // add comments in detail view
+
+    // $scope.initFirst=function(){
+    //   VenueService.getComments().success(function (data) {
+    //     userCtrl.comments = data;
+    //   });
+    // }
+
     userCtrl.addComment = function (venue, comment) {
       console.log('inside add comment in ctrl');
       VenueService.addComment(venue, comment);
@@ -38,18 +41,24 @@
 
 
     //function to submit suggestions form after validation
+
     $scope.submitForm = function(isValid) {
         if (isValid) {
-          alert('Thank you for submitting your sugestions!');
+          alert('Thank you for submitting your suggestions!');
         };
         $scope.submitted = true;
-        $location.path('/');
+        // $location.path('/');
+
     };
 
 
+    //Google Maps
 
     uiGmapGoogleMapApi.then(function(maps) {
-
+      for( var i = 0; i < userCtrl.venues.length ; i++) {
+        VenueService.getCoords(userCtrl.venues[i]);
+        console.log('looping ' + i);
+      }
     });
 
 
@@ -62,12 +71,12 @@
         zoom: 12
       }
 
-  })
+  }])
 
 
   // favorites
 
-  .controller('FavoritesController', function(FaveService) {
+  .controller('FavoritesController', ['FaveService', function(FaveService) {
 
     var faveCtrl = this;
 
@@ -85,6 +94,6 @@
       FaveService.deleteFavoriteVenue(venue.id);
     };
 
-  });
+  }]);
 
 })();
