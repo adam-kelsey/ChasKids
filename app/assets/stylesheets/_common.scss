@@ -3,6 +3,11 @@ $mainAccent: #9eb77b;
 $mainAccentLight: #cfdbbd;
 $mainAccentFont: #464f38;
 
+//font-family: 'Rosario', sans-serif;
+//font-family: 'Source Sans Pro', sans-serif;
+
+$font-main: 'Source Sans Pro', sans-serif;
+$font-headlines: 'Rosario', sans-serif;
 
 
 
@@ -21,6 +26,7 @@ ul {
 }
 
 a {
+  font-family: $font-main;
   text-decoration: none;
   &:hover {
     text-decoration: none;
@@ -33,7 +39,11 @@ a {
 .navbar {
   background-color: white;
   color: $mainAccent;
+  font-family: $font-main;
   font-size: 1.4em;
+  a:visited {
+    color: $mainAccent;
+  }
   .navbar-brand {
     font-size: 2em;
     img {
@@ -48,7 +58,11 @@ a {
   padding-top: 25px;
 }
 
+h1,h2 {
+  font-family: $font-headlines;
+}
 
-p {
+p, input, label {
+  font-family: $font-main;
   font-size: 1.3em;
 }
