@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: [ :favorite ]
   # before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -65,7 +65,7 @@ class VenuesController < ApplicationController
     u.venue_id = params[:id]
     u.user_id = current_user.id
     u.save
-    respond to do |format|
+    respond_to do |format|
       format.json{ render nothing: true }
     end
   end
