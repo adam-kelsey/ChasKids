@@ -38,9 +38,6 @@
 
   //comments
 
-    // var getComments = function (venue) {
-    //   return $http.get('/venues/' + venue.id + '/comments.json');
-    // };
 
     var addComment = function (venue, comment) {
       console.log(venue);

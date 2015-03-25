@@ -40,7 +40,7 @@ a {
   background-color: white;
   color: $mainAccent;
   font-family: $font-main;
-  font-size: 1.4em;
+  font-size: 1.5em;
   a:visited {
     color: $mainAccent;
   }
@@ -56,6 +56,7 @@ a {
 .navbar-fixed-top {
   top: 0;
   padding-top: 25px;
+  padding-bottom: 34px;
 }
 
 h1,h2 {

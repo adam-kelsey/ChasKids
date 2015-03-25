@@ -25,8 +25,8 @@ rgba(201, 229, 214, 0.3)), url("/assets/CharlestonBattery.jpg") center center no
   .thumbnail {
     border: none;
     > img {
-border-radius: 100%;
-opacity: 0.8;
+      border-radius: 100%;
+      opacity: 0.8;
     }
   }
   .caption {
@@ -35,6 +35,11 @@ opacity: 0.8;
   a:hover {
     img {
       opacity: 1;
+      -webkit-transition: opacity 1s ease;
+      transition: opacity 1s ease;
+    }
+    a:visited {
+      text-decoration: none;
     }
     h3 {
       color: white;

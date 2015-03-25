@@ -1,10 +1,11 @@
 .container-detail {
   background-color: white;
   min-height: 400px;
-  padding: 2em;
+  padding: 3em;
   margin-top: 2em;
   h2 {
     padding-bottom: 0.5em;
+    padding-top: 10px;
   }
   img {
     max-height: 300px;
@@ -18,7 +19,7 @@
     color: $mainAccent;
   }
   .groupButtons {
-    padding-top: 1em;
+    padding-top: 10px;
   }
   .btn {
     color: white;
