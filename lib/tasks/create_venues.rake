@@ -1,7 +1,6 @@
 task create_venues: :environment do
   10.times do
     Venue.create!({
-      facebook_id: Faker::Number.number(2),
       category: [
         "Parks & Playgrounds", "Beaches & Waterparks", "Outdoor & Recreational", "Animals", "Indoor Fun", "Museums & Historic Sites", "Birthday Party Venues"
       ].sample,
