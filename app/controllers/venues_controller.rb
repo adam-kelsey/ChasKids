@@ -1,14 +1,16 @@
 class VenuesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: [ :favorite ]
   # before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:q].blank?
       @venues = Venue.all
+    elsif 'birthday_party_venue' == params[:q]
+      @venues = Venue.where(birthday_party_venue: 'Yes')
     else
       @venues = Venue.where("category LIKE ?", "%#{params[:q]}%")
     end
-    # @venues = Venue.all
+
     respond_to do |format|
       format.json { render json: @venues.to_json }
     end
@@ -65,7 +67,7 @@ class VenuesController < ApplicationController
     u.venue_id = params[:id]
     u.user_id = current_user.id
     u.save
-    respond to do |format|
+    respond_to do |format|
       format.json{ render nothing: true }
     end
   end
