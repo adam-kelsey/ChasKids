@@ -28,12 +28,13 @@ ul {
 a {
   font-family: $font-main;
   text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
   &:visited {
     color: inherit;
   }
+  &:hover {
+    text-decoration: none;
+  }
+
 }
 
 .navbar {

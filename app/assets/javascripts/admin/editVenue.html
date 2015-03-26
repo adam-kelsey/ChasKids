@@ -1,6 +1,6 @@
 <div class="container container-formVenue">
 
-  <div class="routeLinks">
+  <div class="routeLinksAdmin">
     <a href="#/adminlist"><span class="fa-lg">
       <i class="fa fa-arrow-left"></i>
     </span>Back to List</a>
@@ -10,7 +10,7 @@
   <h3>Currently editing {{adminCtrl.singleVenue.name}}</h3>
 
   <form class="form-horizontal" ng-submit="adminCtrl.editVenue(adminCtrl.singleVenue)">
-    <button ng-click="adminCtrl.deleteVenue(adminCtrl.singleVenue.id)">DELETE</button>
+    <button class ="btn btn-default" ng-click="adminCtrl.deleteVenue(adminCtrl.singleVenue.id)">DELETE</button>
 <!-- {{adminCtrl.singleVenue.id}} -->
     <div class="form-group">
       <label for="" class="col-sm-2 control-label">Venue Category</label>
@@ -135,7 +135,7 @@
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit">Update Venue</button>
+        <button class ="btn btn-default" type="submit">Update Venue</button>
       </div>
     </div>
 
