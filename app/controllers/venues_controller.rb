@@ -5,10 +5,12 @@ class VenuesController < ApplicationController
   def index
     if params[:q].blank?
       @venues = Venue.all
+    elsif 'birthday_party_venue' == params[:q]
+      @venues = Venue.where(birthday_party_venue: 'Yes')
     else
       @venues = Venue.where("category LIKE ?", "%#{params[:q]}%")
     end
-    # @venues = Venue.all
+
     respond_to do |format|
       format.json { render json: @venues.to_json }
     end
