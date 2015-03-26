@@ -13,11 +13,9 @@
 
     var getVenues = function () {
       return $http.get('/venues.json');
-
     };
 
     var getSingleVenue = function (id) {
-      console.log('service getsinglevalue' + id);
       return $http.get('/venues/' + id +'.json')
     };
 
@@ -28,7 +26,6 @@
     };
 
     var deleteVenue = function (id) {
-      console.log('service delete', id);
       $http.delete('/venues/' + id + '.json').success(function(){
         $location.path('/adminlist')
       });
@@ -40,10 +37,8 @@
 
 
     var addComment = function (venue, comment) {
-      console.log(venue);
       venue.comments.push(comment);
       $http.post('/venues/' + venue.id + '/comments.json', comment).success(function(){
-        console.log('addComment for' + venue.id + 'works');
       });
 
     };
@@ -62,8 +57,6 @@
 //edit Venue
 
   var editVenue = function (venue, id) {
-    console.log(venue);
-    console.log('service edit' + id);
     $http.put('/venues/' + id + '.json', venue).success(function(){
       $location.path('/adminlist');
     });
@@ -76,7 +69,6 @@
       addVenue: addVenue,
       deleteVenue: deleteVenue,
       editVenue: editVenue,
-      // getComments: getComments,
       addComment: addComment,
       getCoords: getCoords
     };
@@ -84,13 +76,12 @@
   .factory('FaveService', ['$http', '_', '$rootScope', '$routeParams', function ($http, _, $rootScope, $routeParams) {
 
     // var url = 'http://tiy-fee-rest.herokuapp.com/collections/totspotfaves';
-    // var favorites = [];
+    var favorites = [];
     // var url = '/favorites';
 
     var addFavoriteVenue = function (venue) {
 
       $http.post('/venues/' + venue.id + '/favorite.json', venue);
-      console.log(venue.name);
       $rootScope.$broadcast('favorite:created');
     };
 
@@ -100,10 +91,14 @@
 
     var deleteFavoriteVenue = function (id, venue) {
       $http.delete('/favorites/' + id + '.json').success(function(){
+        console.log(id);
       });
-      var index = user_favorites.indexOf(venue);
-      user_favorites.splice(index,1);
+
     };
+
+
+
+
 
     return {
       getFavoriteVenues: getFavoriteVenues,

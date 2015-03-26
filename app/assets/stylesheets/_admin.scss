@@ -12,6 +12,9 @@
 .routeLinksAdmin {
   font-size: 1.4em;
   color: $mainAccent;
+  &:visited {
+    color: $mainAccent;
+  }
 }
 .btn {
   color: white;
