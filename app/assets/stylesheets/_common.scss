@@ -28,12 +28,13 @@ ul {
 a {
   font-family: $font-main;
   text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
   &:visited {
     color: inherit;
   }
+  &:hover {
+    text-decoration: none;
+  }
+
 }
 
 .navbar {
@@ -56,7 +57,7 @@ a {
 .navbar-fixed-top {
   top: 0;
   padding-top: 25px;
-  padding-bottom: 30px;
+/*   padding-bottom: 30px; */
 }
 
 h1,h2 {

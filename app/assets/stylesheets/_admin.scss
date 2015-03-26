@@ -4,3 +4,32 @@
     border-radius: 100%;
   }
 }
+.adminList, .container-formVenue {
+  font-family: $font-main;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+.routeLinksAdmin {
+  font-size: 1.4em;
+  color: $mainAccent;
+}
+.btn {
+  color: white;
+  background-color: $mainAccent;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  &:hover {
+    color: $mainAccent;
+    background-color: white;
+    border: $mainAccent;
+  }
+}
+.viewMore {
+  color: $mainAccent;
+  &:visited {
+    color: $mainAccent;
+  }
+  &:hover{
+    color: black;
+  }
+}
