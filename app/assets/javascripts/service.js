@@ -42,7 +42,6 @@
     var addComment = function (venue, comment) {
       console.log(venue);
       venue.comments.push(comment);
-
       $http.post('/venues/' + venue.id + '/comments.json', comment).success(function(){
         console.log('addComment for' + venue.id + 'works');
       });
@@ -89,7 +88,7 @@
     // var url = '/favorites';
 
     var addFavoriteVenue = function (venue) {
-      // venue.favorites.push(favorite);
+
       $http.post('/venues/' + venue.id + '/favorite.json', venue);
       console.log(venue.name);
       $rootScope.$broadcast('favorite:created');
@@ -99,9 +98,11 @@
       return $http.get('/favorites.json');
     };
 
-    var deleteFavoriteVenue = function (id) {
+    var deleteFavoriteVenue = function (id, venue) {
       $http.delete('/favorites/' + id + '.json').success(function(){
       });
+      var index = user_favorites.indexOf(venue);
+      user_favorites.splice(index,1);
     };
 
     return {
