@@ -5,33 +5,18 @@
 
     var userCtrl = this;
 
-
     if($routeParams.venueId) {
       VenueService.getSingleVenue($routeParams.venueId).success(function (data) {
         userCtrl.singleVenue = data;
       });
-
     }
 
-    VenueService.getVenues().success(function (data) {
-      userCtrl.venues = data;
-      // for( var i = 0; i < userCtrl.venues.length ; i++) {
-      //   VenueService.getCoords(userCtrl.venues[i]);
-    // }
-  });
-
     userCtrl.currentIndex = $routeParams.venueId;
-
-    // add comments in detail view
-
 
     userCtrl.addComment = function (venue, comment) {
       VenueService.addComment(venue, comment);
       $scope.comment = {};
     };
-
-
-    //function to submit suggestions form after validation
 
     $scope.submitForm = function(isValid) {
         if (isValid) {
@@ -39,27 +24,29 @@
         };
         $scope.submitted = true;
         // $location.path('/');
-
     };
 
 
     //Google Maps
-
-    uiGmapGoogleMapApi.then(function(maps) {
-      for( var i = 0; i < userCtrl.venues.length ; i++) {
-        VenueService.getCoords(userCtrl.venues[i]);
-      }
+    VenueService.getVenues().success(function (data) {
+      userCtrl.venues = data;
+    }).then(function() {
+      uiGmapGoogleMapApi.then(function(maps) {
+      }).then(function() {
+        for( var i = 0; i < userCtrl.venues.length ; i++) {
+          VenueService.getCoords(userCtrl.venues[i]);
+        }
+      });
     });
 
 
-
-      $scope.map = {
-        center: {
-          latitude: 32.8433,
-          longitude: -79.9333
-        },
-        zoom: 12
-      }
+    $scope.map = {
+      center: {
+        latitude: 32.8433,
+        longitude: -79.9333
+      },
+      zoom: 12
+    }
 
   }])
 
